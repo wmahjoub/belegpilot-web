@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung – BelegPilot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:#0D1B2A; --navy-mid:#1A2E42; --navy-light:#243D55; --navy-card:#162535;
+    --accent:#E8A020; --accent-light:#F5C05A; --white:#FFFFFF;
+    --text-white:rgba(255,255,255,0.90); --text-muted:rgba(255,255,255,0.55);
+    --text-faint:rgba(255,255,255,0.30); --border:rgba(255,255,255,0.08);
+    --border-mid:rgba(255,255,255,0.14);
+    --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--navy);color:var(--text-white);line-height:1.6;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border-mid);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;}
+  .nav-cta{background:var(--accent)!important;color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:4px;font-weight:700!important;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border-mid);z-index:99;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--text-muted);text-decoration:none;font-size:1rem;font-weight:500;padding:.75rem 0;border-bottom:1px solid var(--border);}
+  .mobile-menu a.mob-cta{border-bottom:none;margin-top:.5rem;background:var(--accent);color:var(--navy)!important;font-weight:700;text-align:center;padding:.85rem;border-radius:4px;}
+  /* Page hero */
+  .page-hero{padding:120px 2rem 60px;background:var(--navy-mid);border-bottom:1px solid var(--border-mid);}
+  .page-hero-inner{max-width:800px;margin:0 auto;}
+  .page-hero .breadcrumb{font-size:.8rem;color:var(--text-faint);margin-bottom:1rem;}
+  .page-hero .breadcrumb a{color:var(--text-faint);text-decoration:none;}
+  .page-hero .breadcrumb span{color:var(--accent);}
+  .page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:-.03em;}
+  /* Content */
+  .legal-content{max-width:800px;margin:0 auto;padding:60px 2rem 80px;}
+  .legal-content h2{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-mid);}
+  .legal-content h3{font-size:1rem;font-weight:700;color:var(--accent-light);margin:1.5rem 0 .5rem;}
+  .legal-content p{font-size:.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:1rem;}
+  .legal-content a{color:var(--accent-light);text-decoration:none;}
+  .legal-content ul{list-style:none;margin:.5rem 0 1rem 0;}
+  .legal-content ul li{font-size:.9rem;color:var(--text-muted);line-height:1.8;padding-left:1.25rem;position:relative;margin-bottom:.3rem;}
+  .legal-content ul li::before{content:'–';position:absolute;left:0;color:var(--accent);}
+  .legal-content strong{color:var(--white);font-weight:600;}
+  .legal-content ol{list-style:none;counter-reset:ol-counter;margin:.5rem 0 1rem 0;}
+  .legal-content ol li{font-size:.9rem;color:var(--text-muted);line-height:1.8;padding-left:1.5rem;position:relative;margin-bottom:.75rem;counter-increment:ol-counter;}
+  .legal-content ol li::before{content:counter(ol-counter)".";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .info-box{background:var(--navy-card);border:1px solid var(--border-mid);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:1rem 1.25rem;margin:1rem 0;}
+  .info-box p{margin:0;font-size:.85rem;}
+  /* Footer */
+  footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted);border-top:1px solid var(--border-mid);}
+  .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+  .footer-brand .nav-logo{font-size:1.2rem;margin-bottom:.75rem;display:block;}
+  .footer-brand p{font-size:.83rem;line-height:1.7;max-width:320px;}
+  .footer-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+  .footer-col a{color:var(--text-muted);text-decoration:none;font-size:.88rem;}
+  .footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-faint);flex-wrap:wrap;gap:.5rem;align-items:center;}
+  .footer-bottom a{color:var(--text-faint);text-decoration:none;}
+  .footer-bottom-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+  @media(max-width:768px){
+    .footer-inner{grid-template-columns:1fr;gap:2rem;}
+    nav{padding:0 1rem;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .page-hero{padding:90px 1.25rem 40px;}
+    .legal-content{padding:40px 1.25rem 60px;}
+  }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Beleg<span>Pilot</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#problem">Das Problem</a></li>
+    <li><a href="index.html#how">So funktioniert es</a></li>
+    <li><a href="index.html#onboarding">Pilotprojekt</a></li>
+    <li><a href="index.html#kontakt" class="nav-cta">Beratung buchen</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#problem">Das Problem</a>
+  <a href="index.html#how">So funktioniert es</a>
+  <a href="index.html#onboarding">Pilotprojekt</a>
+  <a href="index.html#kontakt" class="mob-cta">Beratung buchen</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › <span>Datenschutz</span></div>
+    <h1>Datenschutzerklärung</h1>
+  </div>
+</div>
+<div class="legal-content">
+
+  <p>Als Betreiber dieser Webseite kommen wir mit Ihren personenbezogenen Daten in Kontakt. In dieser Datenschutzerklärung erläutern wir, in welcher Weise, zu welchem Zweck und auf welcher rechtlichen Grundlage wir Ihre Daten verarbeiten.</p>
+
+  <div class="info-box">
+    <p><strong>Verantwortlicher für die Datenverarbeitung:</strong><br>
+    Landau4Consulting GmbH · Tölzer Str. 30a · 82031 Grünwald, Deutschland<br>
+    Telefon: +49 89 693 141 100 · E-Mail: <a href="mailto:info@landau4consulting.de">info@landau4consulting.de</a></p>
+  </div>
+
+  <h2>Ihre Rechte</h2>
+
+  <h3>Widerspruch gegen die Datenverarbeitung</h3>
+  <p>Soweit wir Ihre Daten auf Grundlage berechtigter Interessen (Art. 6 Abs. 1 lit. f DSGVO) verarbeiten, haben Sie nach Art. 21 DSGVO das Recht, Widerspruch einzulegen. Sie können Ihre Rechte (Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit) jederzeit per E-Mail an <a href="mailto:info@landau4consulting.de">info@landau4consulting.de</a> geltend machen.</p>
+
+  <h3>Beschwerderecht</h3>
+  <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist u. a. das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
+
+  <h2>Allgemeine Hinweise</h2>
+
+  <h3>SSL- / TLS-Verschlüsselung</h3>
+  <p>Unsere Website nutzt SSL- bzw. TLS-Verschlüsselung. Sie erkennen dies am Schloss-Icon in der Adresszeile Ihres Browsers und dem Präfix <strong>https://</strong>.</p>
+
+  <h3>Datenspeicherung</h3>
+  <p>Wir speichern Ihre Daten, bis der Zweck der Datenverarbeitung entfällt, Sie Widerspruch einlegen oder Ihre Einwilligung widerrufen. Gesetzliche Aufbewahrungsfristen bleiben unberührt.</p>
+
+  <h2>Hosting</h2>
+  <h3>Externes Hosting</h3>
+  <p>Unsere Website wird gehostet bei: <strong>TOOLYNK</strong>, 66 Rue Crillon, 69006 Lyon, Frankreich. Der Hoster verarbeitet alle Daten unserer Webseite auf Grundlage von Art. 6 Abs. 1 lit. b) und f) DSGVO ausschließlich nach unseren Weisungen.</p>
+
+  <h3>Cloudflare (CDN)</h3>
+  <p>Wir nutzen das Content Delivery Network von Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA. Rechtsgrundlage: Art. 6 Abs. 1 lit. f) DSGVO. Datenübertragung in die USA auf Grundlage des Angemessenheitsbeschlusses der Europäischen Kommission.</p>
+
+  <h2>Datenerfassung auf dieser Webseite</h2>
+
+  <h3>Cookies</h3>
+  <p>Unsere Webseite verwendet Cookies. Notwendige Cookies werden auf Basis von Art. 6 Abs. 1 lit. f) DSGVO gespeichert. Alle weiteren Cookies setzen wir nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a) DSGVO) ein. Sie können Cookies in Ihrem Browser jederzeit deaktivieren oder löschen.</p>
+
+  <h3>Server-Log-Dateien</h3>
+  <p>Unser Provider erfasst automatisch Server-Log-Dateien mit folgenden Daten: Browsertyp und -version, Betriebssystem, Referrer-URL, IP-Adresse (anonymisiert), Zeitpunkt der Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. f) DSGVO.</p>
+
+  <h3>Kontaktformular</h3>
+  <p>Nachrichten über das Kontaktformular speichern wir zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. b) bzw. f) DSGVO. Daten werden gelöscht, sobald Ihre Anfrage abschließend bearbeitet ist.</p>
+
+  <h3>Anfrage per E-Mail oder Telefon</h3>
+  <p>Kontaktdaten, die Sie uns per E-Mail oder Telefon übermitteln, speichern wir zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. b) bzw. f) DSGVO.</p>
+
+  <h2>Eingesetzte Tools & Dienste</h2>
+
+  <h3>Microsoft Bookings</h3>
+  <p>Für die Terminbuchung nutzen wir Microsoft Bookings (Microsoft Ireland Operations Limited, One Microsoft Place, Dublin 18, Irland). Rechtsgrundlage: Art. 6 Abs. 1 lit. f) DSGVO. Weitere Infos: <a href="https://privacy.microsoft.com/de-de/privacystatement" target="_blank">Microsoft Datenschutz</a>.</p>
+
+  <h3>Microsoft Teams</h3>
+  <p>Für Online-Meetings nutzen wir Microsoft Teams (Microsoft Corp., One Microsoft Way, Redmond, WA 98052, USA). Rechtsgrundlage: Art. 6 Abs. 1 lit. b) bzw. f) DSGVO. Datenübertragung in die USA auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission.</p>
+
+  <h3>Google Analytics</h3>
+  <p>Zur Analyse des Nutzerverhaltens setzen wir Google Analytics ein (Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland). Rechtsgrundlage: Art. 6 Abs. 1 lit. f) bzw. a) DSGVO. Sie können die Datenerfassung per <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">Browser-Plugin</a> verhindern.</p>
+
+  <h3>Monday.com (CRM)</h3>
+  <p>Für das Kundenbeziehungsmanagement nutzen wir Monday.com (6 Yitzhak Sadeh Street, Tel Aviv, Israel). Ein Auftragsverarbeitungsvertrag wurde abgeschlossen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f) DSGVO.</p>
+
+  <h2>Social Media</h2>
+  <p>Wir unterhalten öffentliche Profile in sozialen Netzwerken. Besuchen Sie unsere Profile, können die jeweiligen Betreiber Daten über Ihr Verhalten erfassen. Wir sind gemeinsam mit den Betreibern für die bei diesem Besuch ausgelösten Datenverarbeitungsvorgänge verantwortlich.</p>
+
+  <h3>LinkedIn</h3>
+  <p>LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Irland. Datenübertragung in die USA möglich. Weitere Infos: <a href="https://de.linkedin.com/legal/privacy-policy" target="_blank">LinkedIn Datenschutzrichtlinie</a>.</p>
+
+  <p style="margin-top:2rem;font-size:.8rem;color:var(--text-faint);">Stand: Juni 2026 · Landau4Consulting GmbH</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Beleg<span style="color:var(--accent)">Pilot</span></a>
+      <p>Echtzeit-Kostenkontrolle für jedes Bauprojekt. Entwickelt von Landau4Consulting GmbH, Grünwald.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkt</h5>
+      <ul>
+        <li><a href="index.html#problem">Das Problem</a></li>
+        <li><a href="index.html#how">So funktioniert es</a></li>
+        <li><a href="index.html#onboarding">Pilotprojekt</a></li>
+        <li><a href="index.html#vorteile">Vorteile</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://landau4c.com/">Landau4Consulting</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 · BelegPilot · Landau4Consulting GmbH · Tölzer Str. 30a · 82031 Grünwald</span>
+    <div class="footer-bottom-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://www.linkedin.com/company/81356568">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', function() { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BelegPilot – Baubranche</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:#0D1B2A; --navy-mid:#1A2E42; --navy-light:#243D55; --navy-card:#162535;
+    --accent:#E8A020; --accent-light:#F5C05A; --white:#FFFFFF;
+    --text-white:rgba(255,255,255,0.90); --text-muted:rgba(255,255,255,0.55);
+    --text-faint:rgba(255,255,255,0.30); --border:rgba(255,255,255,0.08);
+    --border-mid:rgba(255,255,255,0.14);
+    --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--navy);color:var(--text-white);line-height:1.6;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border-mid);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;}
+  .nav-cta{background:var(--accent)!important;color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:4px;font-weight:700!important;}
+  .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:var(--navy-mid);clip-path:polygon(8% 0,100% 0,100% 100%,0% 100%);}
+  .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;width:100%;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.4);color:var(--accent-light);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:3px;margin-bottom:1.5rem;}
+  .hero-eyebrow::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;}
+  .hero h1{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-.03em;margin-bottom:1rem;}
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero-tagline{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
+  .hero-sub{color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-bottom:2rem;max-width:480px;}
+  .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn-primary{background:var(--accent);color:var(--navy);padding:.85rem 1.8rem;border-radius:4px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-block;}
+  .btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.35);padding:.85rem 1.8rem;border-radius:4px;font-weight:500;font-size:.95rem;text-decoration:none;}
+  .hero-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
+  .hero-card-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1.25rem;}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;}
+  .stat-box{background:var(--navy-light);border-radius:6px;padding:1rem;}
+  .stat-box.accent{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);}
+  .stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem;}
+  .stat-box.accent .stat-num{color:var(--accent);}
+  .stat-label{font-size:.78rem;color:var(--text-muted);font-weight:500;}
+  .process-steps{display:flex;flex-direction:column;gap:.6rem;}
+  .process-step{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--text-muted);}
+  .step-dot{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--navy);flex-shrink:0;}
+  .logos-band{background:var(--navy-mid);padding:1.25rem 2rem;border-top:1px solid var(--border-mid);}
+  .logos-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .logos-label{font-size:.75rem;color:var(--text-faint);font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+  .logos-list{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
+  .logo-pill{background:var(--border);border:1px solid var(--border-mid);border-radius:4px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;color:var(--text-muted);}
+  section{padding:80px 2rem;}
+  .section-inner{max-width:1100px;margin:0 auto;}
+  .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
+  .section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem;}
+  .section-sub{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:3rem;}
+  .problem{background:var(--navy-mid);}
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .pain-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+  .pain-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:rgba(217,48,37,.08);border-left:3px solid rgba(217,48,37,.6);border-radius:0 6px 6px 0;}
+  .pain-num{width:28px;height:28px;background:rgba(217,48,37,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#F28B82;flex-shrink:0;margin-top:2px;}
+  .pain-text{font-size:.9rem;color:var(--text-muted);line-height:1.55;}
+  .pain-text strong{color:var(--white);display:block;font-weight:600;margin-bottom:.15rem;}
+  .cost-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
+  .cost-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:var(--white);}
+  .cost-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border);}
+  .cost-label{font-size:.85rem;color:var(--text-muted);}
+  .cost-val{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--accent);}
+  .cost-total{margin-top:1.25rem;padding-top:1.25rem;border-top:2px solid var(--accent);display:flex;justify-content:space-between;align-items:center;}
+  .cost-total .cost-label{color:var(--white);font-weight:600;font-size:.9rem;}
+  .cost-total .cost-val{font-size:1.5rem;}
+  .belege{background:var(--navy);}
+  .beleg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .beleg-card{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
+  .beleg-num{width:36px;height:36px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:1rem;}
+  .beleg-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+  .beleg-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
+  .beleg-tag{display:inline-block;margin-top:.75rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:3px;}
+  .how{background:var(--navy-mid);}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;}
+  .steps-grid::before{content:'';position:absolute;top:28px;left:calc(12.5% + 28px);right:calc(12.5% + 28px);height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0,var(--accent) 8px,transparent 8px,transparent 16px);}
+  .step-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
+  .step-num{width:56px;height:56px;background:var(--navy-light);border:1px solid var(--border-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:1.25rem;position:relative;z-index:1;}
+  .step-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+  .step-card p{font-size:.83rem;color:var(--text-muted);line-height:1.6;}
+  .motto-banner{background:var(--navy-card);border-top:3px solid var(--accent);border-bottom:3px solid var(--accent);padding:3rem 2rem;text-align:center;}
+  .motto-banner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:-.02em;}
+  .motto-banner h2 span{color:var(--accent);}
+  .onboarding{background:var(--navy);}
+  .onboarding-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .pilot-badge{display:flex;align-items:flex-start;gap:1rem;background:rgba(26,115,64,.12);border:1px solid rgba(168,213,181,.2);border-radius:8px;padding:1.25rem;margin-top:2rem;}
+  .pilot-badge-bar{width:4px;background:#6FCF97;border-radius:2px;flex-shrink:0;align-self:stretch;}
+  .pilot-badge-text h4{font-weight:600;font-size:.95rem;color:#6FCF97;margin-bottom:.3rem;}
+  .pilot-badge-text p{font-size:.85rem;color:rgba(111,207,151,.7);line-height:1.6;}
+  .process-flow{display:flex;flex-direction:column;}
+  .flow-step{display:flex;align-items:flex-start;gap:1rem;position:relative;}
+  .flow-step:not(:last-child)::after{content:'';position:absolute;left:18px;top:40px;width:2px;height:calc(100% - 8px);background:var(--border-mid);}
+  .flow-num{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;position:relative;z-index:1;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--accent);}
+  .flow-body{padding-bottom:1.5rem;flex:1;}
+  .flow-title{font-weight:600;font-size:.92rem;color:var(--white);margin-bottom:.2rem;}
+  .flow-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;}
+  .flow-decision-wrap{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;}
+  .flow-tag-yes{background:rgba(26,115,64,.2);color:#6FCF97;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(111,207,151,.25);}
+  .flow-tag-no{background:rgba(217,48,37,.15);color:#F28B82;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(242,139,130,.25);}
+  .flow-no-risk{font-size:.8rem;color:var(--text-faint);font-style:italic;}
+  .benefits{background:var(--navy-mid);}
+  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .benefit-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
+  .benefit-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;}
+  .benefit-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+  .benefit-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
+  .compare{background:var(--navy);}
+  .compare-table{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  .compare-col{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
+  .compare-col h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;border-radius:4px;margin-bottom:1rem;}
+  .compare-col.before h3{background:rgba(217,48,37,.12);color:#F28B82;border:1px solid rgba(217,48,37,.2);}
+  .compare-col.after h3{background:rgba(26,115,64,.12);color:#6FCF97;border:1px solid rgba(111,207,151,.2);}
+  .compare-item{display:flex;align-items:flex-start;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--text-muted);}
+  .compare-item:last-child{border-bottom:none;}
+  .ci-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;margin-top:2px;}
+  .before .ci-dot{background:rgba(217,48,37,.2);color:#F28B82;}
+  .after .ci-dot{background:rgba(26,115,64,.2);color:#6FCF97;}
+  .microsoft{background:var(--navy-mid);}
+  .ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+  .ms-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .ms-logo-box{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.25rem;text-align:center;font-size:.82rem;font-weight:600;color:var(--text-muted);}
+  .ms-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--navy);padding:.6rem 1.2rem;border-radius:4px;font-size:.82rem;font-weight:700;margin-top:1.5rem;}
+  .cta-section{background:var(--accent);padding:80px 2rem;}
+  .cta-inner{max-width:700px;margin:0 auto;text-align:center;}
+  .cta-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:1rem;}
+  .cta-section p{color:var(--navy);opacity:.75;font-size:1rem;margin-bottom:2rem;line-height:1.7;}
+  .btn-dark{background:var(--navy);color:var(--white);padding:1rem 2rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;}
+  footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted);border-top:1px solid var(--border-mid);}
+  .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+  .footer-brand .nav-logo{font-size:1.2rem;margin-bottom:.75rem;display:block;}
+  .footer-brand p{font-size:.83rem;line-height:1.7;max-width:320px;}
+  .footer-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+  .footer-col a{color:var(--text-muted);text-decoration:none;font-size:.88rem;}
+  .footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-faint);}
+  .footer-bottom a{color:var(--text-faint);text-decoration:none;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border-mid);z-index:99;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--text-muted);text-decoration:none;font-size:1rem;font-weight:500;padding:.75rem 0;border-bottom:1px solid var(--border);}
+  .mobile-menu a.mob-cta{border-bottom:none;margin-top:.5rem;background:var(--accent);color:var(--navy)!important;font-weight:700;text-align:center;padding:.85rem;border-radius:4px;}
+  @media(max-width:768px){
+    .hero-grid,.problem-grid,.steps-grid,.benefits-grid,.compare-table,.ms-grid,.onboarding-intro,.beleg-grid{grid-template-columns:1fr;}
+    .steps-grid::before{display:none;}
+    .footer-inner{grid-template-columns:1fr;gap:2rem;}
+    nav{padding:0 1rem;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .hero{padding:90px 1.25rem 80px;}
+    .hero::before{display:none;}
+    section{padding:56px 1.25rem;}
+    .motto-banner{padding:2rem 1.25rem;}
+    .logos-band{padding:1rem 1.25rem;}
+    .logos-inner{gap:1rem;}
+    .stat-row{grid-template-columns:1fr 1fr;}
+    .ms-logos{grid-template-columns:repeat(2,1fr);}
+    .hero-buttons{flex-direction:column;}
+    .hero-buttons a{text-align:center;}
+    .section-sub{max-width:100%;}
+    .flow-decision-wrap{flex-direction:column;align-items:flex-start;}
+    .footer-bottom{flex-direction:column;gap:.5rem;}
+    .prozess-flow-row{flex-direction:column!important;gap:1rem!important;}
+    .prozess-flow-row > div[style*="width:24px"]{display:none!important;}
+    .prozess-bottom-band{grid-template-columns:1fr!important;}
+    
+    
+    
+    
+    
+    
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Beleg<span>Pilot</span></div>
+  <ul class="nav-links">
+    <li><a href="#problem">Das Problem</a></li>
+    <li><a href="#how">So funktioniert es</a></li>
+    <li><a href="#onboarding">Pilotprojekt</a></li>
+    <li><a href="#kontakt" class="nav-cta">Beratung buchen</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menue oeffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#problem" onclick="closeMobileMenu()">Das Problem</a>
+  <a href="#how" onclick="closeMobileMenu()">So funktioniert es</a>
+  <a href="#onboarding" onclick="closeMobileMenu()">Pilotprojekt</a>
+  <a href="#vorteile" onclick="closeMobileMenu()">Vorteile</a>
+  <a href="#kontakt" class="mob-cta" onclick="closeMobileMenu()">Beratung buchen</a>
+</div>
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">KI-Automatisierung für die Baubranche</div>
+      <h1>Vom Beleg-Chaos zur <em>Echtzeit-Kostenkontrolle</em> für jedes Bauprojekt</h1>
+      <p class="hero-tagline">Volle Kontrolle. Null Chaos. Jederzeit.</p>
+      <p class="hero-sub">Rechnungen, Lieferscheine, Wiegekarten — alles automatisch erfasst, dem richtigen Bauprojekt zugeordnet und revisionssicher archiviert. Direkt in Microsoft 365. – ohne Suchen, Scannen oder Hinterherlaufen.</p>
+      <div class="hero-buttons">
+        <a href="#onboarding" class="btn-primary">Kostenloses Pilotprojekt starten</a>
+        <a href="#how" class="btn-outline">So funktioniert es</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Typisches Bauunternehmen — vorher vs. nachher</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">4,5 h</div><div class="stat-label">manueller Aufwand pro Tag</div></div>
+        <div class="stat-box accent"><div class="stat-num">70%</div><div class="stat-label">Zeitersparnis mit KI</div></div>
+        <div class="stat-box"><div class="stat-num">12%</div><div class="stat-label">Skonto-Verlust (oe)</div></div>
+        <div class="stat-box accent"><div class="stat-num">0%</div><div class="stat-label">verpasste Skonto-Fristen</div></div>
+      </div>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-dot">1</div>Rechnung &amp; Lieferschein automatisch erkannt</div>
+        <div class="process-step"><div class="step-dot">2</div>Freigabe direkt in Teams — auch mobil</div>
+        <div class="process-step"><div class="step-dot">3</div>Revisionssichere Ablage in SharePoint</div>
+        <div class="process-step"><div class="step-dot">4</div>Übergabe an DATEV oder ERP</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="logos-band">
+  <div class="logos-inner">
+    <span class="logos-label">Vertrauen von</span>
+    <div class="logos-list">
+      <div class="logo-pill">STADA</div><div class="logo-pill">AERLO Logic</div>
+      <div class="logo-pill">CAPTRAIN</div><div class="logo-pill">MHP</div>
+      <div class="logo-pill">Microsoft Partner</div>
+    </div>
+  </div>
+</div>
+<section class="problem" id="problem">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <div class="section-label">Das Problem</div>
+        <h2 class="section-title">Rechnungschaos kostet Bauunternehmen bares Geld</h2>
+        <p class="section-sub">Auf Grossbaustellen laufen täglich Rechnungen, Lieferscheine und Wiegekarten ein. Alles manuell zu verarbeiten ist fehleranfällig, langsam — und teuer.</p>
+        <ul class="pain-list">
+          <li class="pain-item"><div class="pain-num">1</div><div class="pain-text"><strong>Belege aus allen Kanälen</strong>Rechnungen, Lieferscheine, Wiegekarten — jede Baustelle ein anderer Prozess.</div></li>
+          <li class="pain-item"><div class="pain-num">2</div><div class="pain-text"><strong>Freigaben verzögern sich</strong>Bauleiter sind vor Ort — keine Zeit für Papierprüfung im Büro.</div></li>
+          <li class="pain-item"><div class="pain-num">3</div><div class="pain-text"><strong>Skonto-Fristen werden verpasst</strong>Bis die Rechnung genehmigt ist, ist die 2%-Frist längst abgelaufen.</div></li>
+          <li class="pain-item"><div class="pain-num">4</div><div class="pain-text"><strong>Keine Echtzeit-Kostenkontrolle</strong>Welche Baustelle hat welche Kosten? Niemand hat den Überblick in Echtzeit.</div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="cost-card">
+          <h3>Was manuelle Belege ein Bauunternehmen kosten</h3>
+          <div class="cost-item"><span class="cost-label">Belege/Monat (50 MA)</span><span class="cost-val">320</span></div>
+          <div class="cost-item"><span class="cost-label">Bearbeitungszeit pro Beleg</span><span class="cost-val">18 min</span></div>
+          <div class="cost-item"><span class="cost-label">Monatlicher Personalaufwand</span><span class="cost-val">96 Std.</span></div>
+          <div class="cost-item"><span class="cost-label">Verpasste Skonti/Jahr</span><span class="cost-val">~ 8.400 EUR</span></div>
+          <div class="cost-item"><span class="cost-label">Fehlerkosten &amp; Korrekturen</span><span class="cost-val">~ 3.200 EUR</span></div>
+          <div class="cost-total"><span class="cost-label">Versteckte Kosten gesamt/Jahr</span><span class="cost-val">~ 24.000 EUR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="belege">
+  <div class="section-inner">
+    <div class="section-label">Speziell für den Bau</div>
+    <h2 class="section-title">Alle Bau-Belege — ein System</h2>
+    <p class="section-sub">BelegPilot erkennt und verarbeitet automatisch alle Belegtypen, die auf Baustellen anfallen.</p>
+    <div class="beleg-grid">
+      <div class="beleg-card"><div class="beleg-num">01</div><h4>Eingangsrechnungen</h4><p>Von Subunternehmern, Lieferanten und Nachunternehmern — inklusive VOB-Schlussrechnungen mit automatischem Mengenabgleich.</p><span class="beleg-tag">VOB-konform</span></div>
+      <div class="beleg-card"><div class="beleg-num">02</div><h4>Lieferscheine</h4><p>Automatische Erfassung und Zuordnung zum Bauvorhaben. Abgleich mit Bestellungen — lückenlose Dokumentation jeder Lieferung.</p><span class="beleg-tag">Automatisch erfasst</span></div>
+      <div class="beleg-card"><div class="beleg-num">03</div><h4>Wiegekarten</h4><p>Wiegekarten für Schüttgut, Aushub und Materiallieferungen werden digitalisiert und direkt der richtigen Kostenstelle zugeordnet.</p><span class="beleg-tag">Bau-spezifisch</span></div>
+    </div>
+  </div>
+</section>
+<section class="how" id="how">
+  <div class="section-inner">
+    <div class="section-label">So funktioniert es</div>
+    <h2 class="section-title">Vier Schritte — vollautomatisch</h2>
+    <p class="section-sub">Direkt in Ihrer bestehenden Microsoft 365-Umgebung. Kein neues Tool, keine Schulung, keine IT-Projekte.</p>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><h4>Eingang &amp; Erkennung</h4><p>Belege kommen zentral an. Die KI liest Lieferant, Betrag, Kostenstelle und Belegtyp automatisch aus.</p></div>
+      <div class="step-card"><div class="step-num">02</div><h4>Freigabe in Teams</h4><p>Der Bauleiter erhält eine Teams-Benachrichtigung und genehmigt mit einem Klick — auch mobil vom Smartphone.</p></div>
+      <div class="step-card"><div class="step-num">03</div><h4>Archivierung in SharePoint</h4><p>Belege werden automatisch nach Projekt und Kostenstelle abgelegt — GoBD-konform und durchsuchbar.</p></div>
+      <div class="step-card"><div class="step-num">04</div><h4>Übergabe an DATEV</h4><p>Strukturierte Übergabe an DATEV, Lexoffice oder Ihr ERP — kein doppeltes Erfassen, kein Medienbruch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESSABLAUF SECTION -->
+<section style="background:var(--navy-mid);padding:80px 2rem;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label">Prozessablauf</div>
+    <h2 class="section-title">Von der Rechnung zur Zahlung — vollautomatisch</h2>
+    <p class="section-sub">Fünf Schritte, weitestgehend automatisiert. Nahtlose Integration via REST API in Ihre bestehenden Systeme.</p>
+
+    <div style="background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;overflow-x:auto;">
+      <svg width="100%" viewBox="0 0 680 780" role="img" style="min-width:480px;">
+        <title>BelegPilot Prozess-Workflow</title>
+        <desc>Workflow von Belegeingang über KI-Erkennung, Freigabe-Entscheidung bis zur Archivierung und ERP-Übergabe</desc>
+        <defs>
+          <marker id="wfarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <!-- Eingang -->
+        <rect x="50" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
+        <text x="125" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">E-Mail</text>
+
+        <rect x="265" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
+        <text x="340" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">Scan / Upload</text>
+
+        <rect x="480" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
+        <text x="555" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">API-Import</text>
+
+        <line x1="125" y1="74" x2="295" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <line x1="340" y1="74" x2="340" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <line x1="555" y1="74" x2="385" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- KI Datenerfassung -->
+        <rect x="190" y="128" width="300" height="56" rx="8" fill="#3A2800" stroke="#854F0B" stroke-width="0.5"/>
+        <text x="340" y="149" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#FAC775;">KI Datenerfassung</text>
+        <text x="340" y="168" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Azure AI · OCR · Feldextraktion</text>
+
+        <line x1="340" y1="184" x2="340" y2="224" stroke="#BA7517" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- KI Validierung -->
+        <rect x="190" y="224" width="300" height="56" rx="8" fill="#3A2800" stroke="#854F0B" stroke-width="0.5"/>
+        <text x="340" y="245" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#FAC775;">KI Rechnungsvalidierung</text>
+        <text x="340" y="264" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Duplikatprüfung · 3-Wege-Abgleich</text>
+
+        <line x1="340" y1="280" x2="340" y2="322" stroke="#BA7517" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- Entscheidung: Daten korrekt? -->
+        <polygon points="340,322 420,348 340,374 260,348" fill="#1A2E42" stroke="#BA7517" stroke-width="0.8"/>
+        <text x="340" y="344" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Daten</text>
+        <text x="340" y="358" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">korrekt?</text>
+
+        <line x1="260" y1="348" x2="140" y2="348" stroke="#E24B4A" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <text x="200" y="340" text-anchor="middle" style="font-family:var(--sans);font-size:11px;fill:#F28B82;">Nein</text>
+        <rect x="50" y="322" width="90" height="52" rx="6" fill="#501313" stroke="#A32D2D" stroke-width="0.5"/>
+        <text x="95" y="341" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">Rückfrage</text>
+        <text x="95" y="357" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">/ Korrektur</text>
+        <path d="M50 348 L30 348 L30 252 L190 252" fill="none" stroke="#E24B4A" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#wfarrow)"/>
+
+        <line x1="340" y1="374" x2="340" y2="414" stroke="#639922" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <text x="356" y="396" style="font-family:var(--sans);font-size:11px;fill:#6FCF97;">Ja</text>
+
+        <!-- Freigabe Workflow -->
+        <rect x="190" y="414" width="300" height="56" rx="8" fill="#04342C" stroke="#0F6E56" stroke-width="0.5"/>
+        <text x="340" y="435" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#9FE1CB;">Freigabe-Workflow</text>
+        <text x="340" y="454" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">Teams · Outlook · PowerApp</text>
+
+        <line x1="340" y1="470" x2="340" y2="510" stroke="#1D9E75" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- Entscheidung: Freigabe? -->
+        <polygon points="340,510 420,536 340,562 260,536" fill="#1A2E42" stroke="#1D9E75" stroke-width="0.8"/>
+        <text x="340" y="532" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">Freigabe</text>
+        <text x="340" y="546" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">erteilt?</text>
+
+        <line x1="420" y1="536" x2="540" y2="536" stroke="#E24B4A" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <text x="480" y="528" text-anchor="middle" style="font-family:var(--sans);font-size:11px;fill:#F28B82;">Nein</text>
+        <rect x="540" y="510" width="100" height="52" rx="6" fill="#501313" stroke="#A32D2D" stroke-width="0.5"/>
+        <text x="590" y="529" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">Abgelehnt</text>
+        <text x="590" y="545" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">→ Ablage</text>
+
+        <line x1="340" y1="562" x2="340" y2="602" stroke="#639922" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <text x="356" y="584" style="font-family:var(--sans);font-size:11px;fill:#6FCF97;">Ja</text>
+
+        <!-- Archivierung -->
+        <rect x="190" y="602" width="300" height="56" rx="8" fill="#173404" stroke="#3B6D11" stroke-width="0.5"/>
+        <text x="340" y="623" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#C0DD97;">Archivierung SharePoint</text>
+        <text x="340" y="642" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#97C459;">GoBD-konform · DSGVO · Audit-Trail</text>
+
+        <line x1="340" y1="658" x2="340" y2="698" stroke="#3B6D11" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- Ausgabe -->
+        <rect x="100" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
+        <text x="170" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">DATEV / ERP</text>
+
+        <rect x="270" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
+        <text x="340" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">NEVARIS / BRZ</text>
+
+        <rect x="440" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
+        <text x="510" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">SAP / Dynamics</text>
+
+        <line x1="290" y1="658" x2="170" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <line x1="340" y1="658" x2="340" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <line x1="390" y1="658" x2="510" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
+
+        <!-- Swimlane labels -->
+        <text x="14" y="52" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,52)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Eingang</text>
+        <text x="14" y="212" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,212)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">KI</text>
+        <text x="14" y="490" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,490)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Mensch</text>
+        <text x="14" y="658" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,658)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Ausgabe</text>
+
+        <!-- Divider lines -->
+        <line x1="25" y1="110" x2="655" y2="110" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <line x1="25" y1="400" x2="655" y2="400" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <line x1="25" y1="590" x2="655" y2="590" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <line x1="25" y1="685" x2="655" y2="685" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+
+    <!-- Integration pills -->
+    <div style="margin-top:1.25rem;background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);white-space:nowrap;">REST API Integration</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">NEVARIS</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">BRZ</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">DATEV</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">Microsoft Dynamics</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">SAP</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">DocuWare</span>
+        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">Lexoffice</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="motto-banner">
+  <h2>Volle Kontrolle. <span>Null Chaos.</span> Jederzeit.</h2>
+</div>
+<section class="onboarding" id="onboarding">
+  <div class="section-inner">
+    <div class="section-label">Einstieg ohne Risiko</div>
+    <h2 class="section-title">Von der Idee zum laufenden System — in wenigen Wochen</h2>
+    <div class="onboarding-intro">
+      <div>
+        <p class="section-sub" style="margin-bottom:1rem">Wir starten mit einem kostenlosen Piloten direkt mit Ihren echten Belegen — Sie entscheiden danach.</p>
+        <div class="pilot-badge">
+          <div class="pilot-badge-bar"></div>
+          <div class="pilot-badge-text">
+            <h4>Kostenloses Pilotprojekt inklusive</h4>
+            <p>Wir automatisieren Ihre Belegverarbeitung testweise mit Ihren eigenen Belegen — Rechnungen, Lieferscheine, Wiegekarten — unverbindlich, kostenlos, in wenigen Tagen live. Kein Risiko. Kein Invest.</p>
+          </div>
+        </div>
+      </div>
+      <div class="process-flow">
+        <div class="flow-step"><div class="flow-num">1</div><div class="flow-body"><div class="flow-title">Anforderungsaufnahme</div><div class="flow-desc">Kurzes Gespräch, ca. 30 Minuten.</div></div></div>
+        <div class="flow-step"><div class="flow-num">2</div><div class="flow-body"><div class="flow-title">Kostenloses Pilotprojekt</div><div class="flow-desc">Mit Ihren eigenen Belegen — unverbindlich, in wenigen Tagen live.</div></div></div>
+        <div class="flow-step"><div class="flow-num">3</div><div class="flow-body"><div class="flow-title">Live-Demo &amp; Ergebnis</div><div class="flow-desc">Automatisierte Verarbeitung mit echten Zahlen erleben.<div class="flow-decision-wrap"><span class="flow-tag-yes">Überzeugend: weiter</span><span class="flow-tag-no">Nicht passend: Stop</span><span class="flow-no-risk">Kein Kosten. Kein Risiko.</span></div></div></div></div>
+        <div class="flow-step"><div class="flow-num">4</div><div class="flow-body"><div class="flow-title">Massgeschneidertes Angebot</div><div class="flow-desc">Individuell auf Ihre Anforderungen.<div class="flow-decision-wrap"><span class="flow-tag-yes">Angenommen: Deployment</span><span class="flow-tag-no">Abgelehnt: Stop</span></div></div></div></div>
+        <div class="flow-step"><div class="flow-num">5</div><div class="flow-body"><div class="flow-title">Deployment &amp; Testphase</div><div class="flow-desc">In Ihrem eigenen Microsoft-Tenant — DSGVO-konform.</div></div></div>
+        <div class="flow-step"><div class="flow-num">6</div><div class="flow-body" style="padding-bottom:0"><div class="flow-title">Go-Live</div><div class="flow-desc">Produktivbetrieb mit L4C-Support — Autopilot ab Tag 1.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="benefits" id="vorteile">
+  <div class="section-inner">
+    <div class="section-label">Vorteile</div>
+    <h2 class="section-title">Gebaut für die Anforderungen im Bau</h2>
+    <p class="section-sub">Projektkostenrechnung, Subunternehmer, VOB-Rechnungen und mobile Bauleiter — alles berücksichtigt.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card"><div class="benefit-label">Kostenkontrolle</div><h4>Echtzeit-Projektkostenkontrolle</h4><p>Projektkosten sofort sichtbar — jeder Beleg landet automatisch beim richtigen Bauprojekt.</p></div>
+      <div class="benefit-card"><div class="benefit-label">Mobilität</div><h4>Mobile Freigabe für Bauleiter</h4><p>Bauleiter genehmigen direkt aus Microsoft Teams auf dem Smartphone — mit Prüfprotokoll.</p></div>
+      <div class="benefit-card"><div class="benefit-label">Compliance</div><h4>VOB-Abschlagsrechnungen</h4><p>Verarbeitung nach VOB — inklusive Mengenabgleich und vollständigem Prüfprotokoll.</p></div>
+      <div class="benefit-card"><div class="benefit-label">Fristen</div><h4>Skonto-Fristen nie mehr verpassen</h4><p>Automatische Eskalation bei drohenden Fristüberschreitungen mit aktiver Erinnerung.</p></div>
+      <div class="benefit-card"><div class="benefit-label">Datenschutz</div><h4>Ihre Daten bleiben bei Ihnen</h4><p>Alle Daten im eigenen Microsoft-Tenant — DSGVO- und GoBD-konform, keine Weitergabe.</p></div>
+      <div class="benefit-card"><div class="benefit-label">Integration</div><h4>Integration ohne Neuprojekt</h4><p>Outlook, Teams, SharePoint, Power Automate. Kein neues Tool. Kein neues Login.</p></div>
+    </div>
+  </div>
+</section>
+<section class="compare">
+  <div class="section-inner">
+    <div class="section-label">Vergleich</div>
+    <h2 class="section-title">Vorher — Nachher im Bauunternehmen</h2>
+    <p class="section-sub">Was sich mit BelegPilot konkret ändert.</p>
+    <div class="compare-table">
+      <div class="compare-col before">
+        <h3>Ohne BelegPilot</h3>
+        <div class="compare-item"><div class="ci-dot">x</div>Rechnungen per E-Mail und Fax</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Wiegekarten manuell erfasst</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Kein Überblick über offene Rechnungen</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Skonti werden regelmäßig verpasst</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Kostenstellen falsch zugeordnet</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Papierarchiv oder chaotische Ordner</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Keine Echtzeit-Kostenkontrolle</div>
+        <div class="compare-item"><div class="ci-dot">x</div>Compliance-Risiken bei Betriebsprüfung</div>
+      </div>
+      <div class="compare-col after">
+        <h3>Mit BelegPilot</h3>
+        <div class="compare-item"><div class="ci-dot">✓</div>Belege automatisch aus allen Kanälen</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>Wiegekarten digital und zugeordnet</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>Echtzeit-Statusübersicht nach Projekt</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>Automatische Skonto-Eskalation</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>KI-gestützte Kostenstellen-Zuordnung</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>GoBD-konforme SharePoint-Ablage</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>Projektkosten sofort sichtbar</div>
+        <div class="compare-item"><div class="ci-dot">✓</div>Vollständige Prüfprotokolle</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="microsoft">
+  <div class="section-inner">
+    <div class="ms-grid">
+      <div>
+        <div class="section-label">Technologie</div>
+        <h2 class="section-title">Nativ in Ihrer Microsoft-Umgebung</h2>
+        <p class="section-sub">Direkt auf Ihrer bestehenden Microsoft 365-Lizenz — Ihre Daten bleiben in Ihrem eigenen Tenant. Kein neues Tool. Kein neues Login.</p>
+        <div class="ms-badge">Microsoft-zertifizierter Partner</div>
+      </div>
+      <div class="ms-logos">
+        <div class="ms-logo-box">Outlook</div><div class="ms-logo-box">Teams</div>
+        <div class="ms-logo-box">SharePoint</div><div class="ms-logo-box">Power Automate</div>
+        <div class="ms-logo-box">Power BI</div><div class="ms-logo-box">Azure AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-section" id="kontakt">
+  <div class="cta-inner">
+    <h2>Bereit für den ersten Schritt?</h2>
+    <p>Kostenloses Pilotprojekt — unverbindlich und in wenigen Tagen live. 30 Minuten Gespräch, dann starten wir direkt mit Ihren echten Belegen.</p>
+    <a href="https://belegpilot.com/kontakt/" class="btn-dark">Kostenloses Pilotprojekt buchen</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo">Beleg<span style="color:var(--accent)">Pilot</span></span>
+      <p>Echtzeit-Kostenkontrolle für jedes Bauprojekt. Entwickelt von Landau4Consulting GmbH, Grünwald.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkt</h5>
+      <ul>
+        <li><a href="#problem">Das Problem</a></li>
+        <li><a href="#how">So funktioniert es</a></li>
+        <li><a href="#onboarding">Pilotprojekt</a></li>
+        <li><a href="#vorteile">Vorteile</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://landau4c.com/">Landau4Consulting</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 · BelegPilot · Landau4Consulting GmbH · Tölzer Str. 30a · 82031 Grünwald</span>
+    <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://www.linkedin.com/company/81356568">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', function() {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  function closeMobileMenu() {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+</script>
+</body>
+</html>

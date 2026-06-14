@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – BelegPilot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:#0D1B2A; --navy-mid:#1A2E42; --navy-light:#243D55; --navy-card:#162535;
+    --accent:#E8A020; --accent-light:#F5C05A; --white:#FFFFFF;
+    --text-white:rgba(255,255,255,0.90); --text-muted:rgba(255,255,255,0.55);
+    --text-faint:rgba(255,255,255,0.30); --border:rgba(255,255,255,0.08);
+    --border-mid:rgba(255,255,255,0.14);
+    --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);background:var(--navy);color:var(--text-white);line-height:1.6;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border-mid);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;}
+  .nav-cta{background:var(--accent)!important;color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:4px;font-weight:700!important;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border-mid);z-index:99;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--text-muted);text-decoration:none;font-size:1rem;font-weight:500;padding:.75rem 0;border-bottom:1px solid var(--border);}
+  .mobile-menu a.mob-cta{border-bottom:none;margin-top:.5rem;background:var(--accent);color:var(--navy)!important;font-weight:700;text-align:center;padding:.85rem;border-radius:4px;}
+  /* Page hero */
+  .page-hero{padding:120px 2rem 60px;background:var(--navy-mid);border-bottom:1px solid var(--border-mid);}
+  .page-hero-inner{max-width:800px;margin:0 auto;}
+  .page-hero .breadcrumb{font-size:.8rem;color:var(--text-faint);margin-bottom:1rem;}
+  .page-hero .breadcrumb a{color:var(--text-faint);text-decoration:none;}
+  .page-hero .breadcrumb span{color:var(--accent);}
+  .page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:-.03em;}
+  /* Content */
+  .legal-content{max-width:800px;margin:0 auto;padding:60px 2rem 80px;}
+  .legal-content h2{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-mid);}
+  .legal-content h3{font-size:1rem;font-weight:700;color:var(--accent-light);margin:1.5rem 0 .5rem;}
+  .legal-content p{font-size:.9rem;color:var(--text-muted);line-height:1.8;margin-bottom:1rem;}
+  .legal-content a{color:var(--accent-light);text-decoration:none;}
+  .legal-content ul{list-style:none;margin:.5rem 0 1rem 0;}
+  .legal-content ul li{font-size:.9rem;color:var(--text-muted);line-height:1.8;padding-left:1.25rem;position:relative;margin-bottom:.3rem;}
+  .legal-content ul li::before{content:'–';position:absolute;left:0;color:var(--accent);}
+  .legal-content strong{color:var(--white);font-weight:600;}
+  .legal-content ol{list-style:none;counter-reset:ol-counter;margin:.5rem 0 1rem 0;}
+  .legal-content ol li{font-size:.9rem;color:var(--text-muted);line-height:1.8;padding-left:1.5rem;position:relative;margin-bottom:.75rem;counter-increment:ol-counter;}
+  .legal-content ol li::before{content:counter(ol-counter)".";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .info-box{background:var(--navy-card);border:1px solid var(--border-mid);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:1rem 1.25rem;margin:1rem 0;}
+  .info-box p{margin:0;font-size:.85rem;}
+  /* Footer */
+  footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted);border-top:1px solid var(--border-mid);}
+  .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+  .footer-brand .nav-logo{font-size:1.2rem;margin-bottom:.75rem;display:block;}
+  .footer-brand p{font-size:.83rem;line-height:1.7;max-width:320px;}
+  .footer-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+  .footer-col a{color:var(--text-muted);text-decoration:none;font-size:.88rem;}
+  .footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-faint);flex-wrap:wrap;gap:.5rem;align-items:center;}
+  .footer-bottom a{color:var(--text-faint);text-decoration:none;}
+  .footer-bottom-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+  @media(max-width:768px){
+    .footer-inner{grid-template-columns:1fr;gap:2rem;}
+    nav{padding:0 1rem;}
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .page-hero{padding:90px 1.25rem 40px;}
+    .legal-content{padding:40px 1.25rem 60px;}
+  }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Beleg<span>Pilot</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#problem">Das Problem</a></li>
+    <li><a href="index.html#how">So funktioniert es</a></li>
+    <li><a href="index.html#onboarding">Pilotprojekt</a></li>
+    <li><a href="index.html#kontakt" class="nav-cta">Beratung buchen</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#problem">Das Problem</a>
+  <a href="index.html#how">So funktioniert es</a>
+  <a href="index.html#onboarding">Pilotprojekt</a>
+  <a href="index.html#kontakt" class="mob-cta">Beratung buchen</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> › <span>Impressum</span></div>
+    <h1>Impressum</h1>
+  </div>
+</div>
+<div class="legal-content">
+
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p><strong>BelegPilot</strong> – ein Produkt der Landau4Consulting GmbH</p>
+  <div class="info-box">
+    <p>Tölzer Str. 30a, D-82031 Grünwald, Deutschland<br>
+    Telefon: +49 89 693 141 100<br>
+    E-Mail: <a href="mailto:info@landau4consulting.de">info@landau4consulting.de</a><br>
+    Web: <a href="https://www.landau4consulting.de" target="_blank">www.landau4consulting.de</a></p>
+  </div>
+  <p><strong>Handelsregister:</strong> Registergericht München · HRB 295774</p>
+  <p><strong>Umsatzsteuer-ID:</strong> DE 353419031</p>
+  <p><strong>Vertreten durch:</strong> Wael Landau (Gründer und Geschäftsführer)</p>
+
+  <h2>Haftungsausschluss</h2>
+
+  <h3>1. Inhalt des Onlineangebotes</h3>
+  <p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</p>
+
+  <h3>2. Verweise und Links</h3>
+  <p>Bei direkten oder indirekten Verweisen auf fremde Internetseiten („Links"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren.</p>
+
+  <h3>3. Urheber- und Kennzeichenrecht</h3>
+  <p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, Tondokumente, Videosequenzen und Texte zu beachten. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer.</p>
+  <p>Die auf unseren Seiten genannten Marken sind zum Teil eingetragene Warenzeichen Dritter. <strong>ITIL®</strong> ist eine eingetragene Marke von AXELOS Limited, verwendet mit der Genehmigung von AXELOS Limited. Alle Rechte vorbehalten.</p>
+
+  <h3>4. Rechtswirksamkeit dieses Haftungsausschlusses</h3>
+  <p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+
+  <h3>5. Impressum Social Media Profile</h3>
+  <p>Dieses Impressum gilt auch für Social-Media-Profile der Landau4Consulting GmbH auf Plattformen wie LinkedIn, Xing, YouTube und Instagram.</p>
+
+  <h3>6. Bildnachweis</h3>
+  <p>Die verwendeten Bilder stammen aus Quellen wie Shutterstock, Pexels, Pixabay, der Microsoft Bilderdatenbank sowie dem unternehmenseigenen Bilderpool.</p>
+
+  <h3>7. Widerspruch Werbe-E-Mails</h3>
+  <p>Im Rahmen der gesetzlichen Impressumspflicht veröffentlichen wir unsere Kontaktdaten. Wir widersprechen hiermit jeglicher nicht ausdrücklich autorisierten Übersendung von Werbematerial aller Art. Wir behalten uns ausdrücklich rechtliche Schritte gegen die unerwünschte Zusendung von Werbematerial vor.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Beleg<span style="color:var(--accent)">Pilot</span></a>
+      <p>Echtzeit-Kostenkontrolle für jedes Bauprojekt. Entwickelt von Landau4Consulting GmbH, Grünwald.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkt</h5>
+      <ul>
+        <li><a href="index.html#problem">Das Problem</a></li>
+        <li><a href="index.html#how">So funktioniert es</a></li>
+        <li><a href="index.html#onboarding">Pilotprojekt</a></li>
+        <li><a href="index.html#vorteile">Vorteile</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <ul>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://landau4c.com/">Landau4Consulting</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>2026 · BelegPilot · Landau4Consulting GmbH · Tölzer Str. 30a · 82031 Grünwald</span>
+    <div class="footer-bottom-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://www.linkedin.com/company/81356568">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', function() { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+</script>
+
+</body>
+</html>
