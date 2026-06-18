@@ -3,29 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ── SEO BASICS ── -->
 <title>BelegPilot – KI-Belegverarbeitung für Bauunternehmen | Rechnungen, Lieferscheine, Wiegekarten automatisieren</title>
 <meta name="description" content="BelegPilot automatisiert Rechnungen, Lieferscheine und Wiegekarten für Bauunternehmen – mit KI direkt in Microsoft 365. GoBD-konform, DATEV-Integration, kostenloser Pilot in wenigen Tagen live.">
 <meta name="keywords" content="Belegverarbeitung Baubranche, Rechnungsautomatisierung Bauunternehmen, KI Buchhaltung Bau, Wiegekarten digitalisieren, Lieferscheine automatisieren, Microsoft 365 Baubranche, DATEV Integration, GoBD-konform, BelegPilot, Landau4Consulting">
 <meta name="author" content="Landau4Consulting GmbH">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://wmahjoub.github.io/belegpilot-web/">
-
-<!-- ── OPEN GRAPH (LinkedIn, WhatsApp, Facebook) ── -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wmahjoub.github.io/belegpilot-web/">
 <meta property="og:title" content="BelegPilot – KI-Belegverarbeitung für Bauunternehmen">
 <meta property="og:description" content="Rechnungen, Lieferscheine und Wiegekarten vollautomatisch verarbeiten – direkt in Microsoft 365. Kostenloser Pilot in wenigen Tagen live.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="BelegPilot">
-
-<!-- ── TWITTER / X CARD ── -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BelegPilot – KI-Belegverarbeitung für Bauunternehmen">
 <meta name="twitter:description" content="Rechnungen, Lieferscheine und Wiegekarten vollautomatisch verarbeiten – direkt in Microsoft 365.">
-
-<!-- ── SCHEMA.ORG STRUCTURED DATA ── -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,183 +52,176 @@
   }
 }
 </script>
-
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy:#0D1B2A; --navy-mid:#1A2E42; --navy-light:#243D55; --navy-card:#162535;
-    --accent:#E8A020; --accent-light:#F5C05A; --white:#FFFFFF;
-    --text-white:rgba(255,255,255,0.90); --text-muted:rgba(255,255,255,0.55);
-    --text-faint:rgba(255,255,255,0.30); --border:rgba(255,255,255,0.08);
-    --border-mid:rgba(255,255,255,0.14);
-    --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
-  }
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--sans);background:var(--navy);color:var(--text-white);line-height:1.6;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border-mid);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
-  .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;}
-  .nav-logo span{color:var(--accent);}
-  .nav-links{display:flex;gap:2rem;list-style:none;}
-  .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;}
-  .nav-cta{background:var(--accent)!important;color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:4px;font-weight:700!important;}
-  .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
-  .hero::before{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:var(--navy-mid);clip-path:polygon(8% 0,100% 0,100% 100%,0% 100%);}
-  .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;width:100%;}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.4);color:var(--accent-light);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:3px;margin-bottom:1.5rem;}
-  .hero-eyebrow::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;}
-  .hero h1{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-.03em;margin-bottom:1rem;}
-  .hero h1 em{font-style:normal;color:var(--accent);}
-  .hero-tagline{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
-  .hero-sub{color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-bottom:2rem;max-width:480px;}
-  .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
-  .btn-primary{background:var(--accent);color:var(--navy);padding:.85rem 1.8rem;border-radius:4px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-block;}
-  .btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.35);padding:.85rem 1.8rem;border-radius:4px;font-weight:500;font-size:.95rem;text-decoration:none;}
-  .hero-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
-  .hero-card-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1.25rem;}
-  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;}
-  .stat-box{background:var(--navy-light);border-radius:6px;padding:1rem;}
-  .stat-box.accent{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);}
-  .stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem;}
-  .stat-box.accent .stat-num{color:var(--accent);}
-  .stat-label{font-size:.78rem;color:var(--text-muted);font-weight:500;}
-  .process-steps{display:flex;flex-direction:column;gap:.6rem;}
-  .process-step{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--text-muted);}
-  .step-dot{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--navy);flex-shrink:0;}
-  .logos-band{background:var(--navy-mid);padding:1.25rem 2rem;border-top:1px solid var(--border-mid);}
-  .logos-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
-  .logos-label{font-size:.75rem;color:var(--text-faint);font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
-  .logos-list{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
-  .logo-pill{background:var(--border);border:1px solid var(--border-mid);border-radius:4px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;color:var(--text-muted);}
-  section{padding:80px 2rem;}
-  .section-inner{max-width:1100px;margin:0 auto;}
-  .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
-  .section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem;}
-  .section-sub{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:3rem;}
-  .problem{background:var(--navy-mid);}
-  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-  .pain-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-  .pain-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:rgba(217,48,37,.08);border-left:3px solid rgba(217,48,37,.6);border-radius:0 6px 6px 0;}
-  .pain-num{width:28px;height:28px;background:rgba(217,48,37,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#F28B82;flex-shrink:0;margin-top:2px;}
-  .pain-text{font-size:.9rem;color:var(--text-muted);line-height:1.55;}
-  .pain-text strong{color:var(--white);display:block;font-weight:600;margin-bottom:.15rem;}
-  .cost-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
-  .cost-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:var(--white);}
-  .cost-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border);}
-  .cost-label{font-size:.85rem;color:var(--text-muted);}
-  .cost-val{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--accent);}
-  .cost-total{margin-top:1.25rem;padding-top:1.25rem;border-top:2px solid var(--accent);display:flex;justify-content:space-between;align-items:center;}
-  .cost-total .cost-label{color:var(--white);font-weight:600;font-size:.9rem;}
-  .cost-total .cost-val{font-size:1.5rem;}
-  .belege{background:var(--navy);}
-  .beleg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-  .beleg-card{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
-  .beleg-num{width:36px;height:36px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:1rem;}
-  .beleg-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
-  .beleg-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
-  .beleg-tag{display:inline-block;margin-top:.75rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:3px;}
-  .how{background:var(--navy-mid);}
-  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;}
-  .steps-grid::before{content:'';position:absolute;top:28px;left:calc(12.5% + 28px);right:calc(12.5% + 28px);height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0,var(--accent) 8px,transparent 8px,transparent 16px);}
-  .step-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
-  .step-num{width:56px;height:56px;background:var(--navy-light);border:1px solid var(--border-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:1.25rem;position:relative;z-index:1;}
-  .step-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
-  .step-card p{font-size:.83rem;color:var(--text-muted);line-height:1.6;}
-  .motto-banner{background:var(--navy-card);border-top:3px solid var(--accent);border-bottom:3px solid var(--accent);padding:3rem 2rem;text-align:center;}
-  .motto-banner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:-.02em;}
-  .motto-banner h2 span{color:var(--accent);}
-  .onboarding{background:var(--navy);}
-  .onboarding-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-  .pilot-badge{display:flex;align-items:flex-start;gap:1rem;background:rgba(26,115,64,.12);border:1px solid rgba(168,213,181,.2);border-radius:8px;padding:1.25rem;margin-top:2rem;}
-  .pilot-badge-bar{width:4px;background:#6FCF97;border-radius:2px;flex-shrink:0;align-self:stretch;}
-  .pilot-badge-text h4{font-weight:600;font-size:.95rem;color:#6FCF97;margin-bottom:.3rem;}
-  .pilot-badge-text p{font-size:.85rem;color:rgba(111,207,151,.7);line-height:1.6;}
-  .process-flow{display:flex;flex-direction:column;}
-  .flow-step{display:flex;align-items:flex-start;gap:1rem;position:relative;}
-  .flow-step:not(:last-child)::after{content:'';position:absolute;left:18px;top:40px;width:2px;height:calc(100% - 8px);background:var(--border-mid);}
-  .flow-num{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;position:relative;z-index:1;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--accent);}
-  .flow-body{padding-bottom:1.5rem;flex:1;}
-  .flow-title{font-weight:600;font-size:.92rem;color:var(--white);margin-bottom:.2rem;}
-  .flow-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;}
-  .flow-decision-wrap{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;}
-  .flow-tag-yes{background:rgba(26,115,64,.2);color:#6FCF97;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(111,207,151,.25);}
-  .flow-tag-no{background:rgba(217,48,37,.15);color:#F28B82;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(242,139,130,.25);}
-  .flow-no-risk{font-size:.8rem;color:var(--text-faint);font-style:italic;}
-  .benefits{background:var(--navy-mid);}
-  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-  .benefit-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
-  .benefit-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;}
-  .benefit-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
-  .benefit-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
-  .compare{background:var(--navy);}
-  .compare-table{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-  .compare-col{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
-  .compare-col h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;border-radius:4px;margin-bottom:1rem;}
-  .compare-col.before h3{background:rgba(217,48,37,.12);color:#F28B82;border:1px solid rgba(217,48,37,.2);}
-  .compare-col.after h3{background:rgba(26,115,64,.12);color:#6FCF97;border:1px solid rgba(111,207,151,.2);}
-  .compare-item{display:flex;align-items:flex-start;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--text-muted);}
-  .compare-item:last-child{border-bottom:none;}
-  .ci-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;margin-top:2px;}
-  .before .ci-dot{background:rgba(217,48,37,.2);color:#F28B82;}
-  .after .ci-dot{background:rgba(26,115,64,.2);color:#6FCF97;}
-  .microsoft{background:var(--navy-mid);}
-  .ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-  .ms-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-  .ms-logo-box{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.25rem;text-align:center;font-size:.82rem;font-weight:600;color:var(--text-muted);}
-  .ms-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--navy);padding:.6rem 1.2rem;border-radius:4px;font-size:.82rem;font-weight:700;margin-top:1.5rem;}
-  .cta-section{background:var(--accent);padding:80px 2rem;}
-  .cta-inner{max-width:700px;margin:0 auto;text-align:center;}
-  .cta-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:1rem;}
-  .cta-section p{color:var(--navy);opacity:.75;font-size:1rem;margin-bottom:2rem;line-height:1.7;}
-  .btn-dark{background:var(--navy);color:var(--white);padding:1rem 2rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;}
-  footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted);border-top:1px solid var(--border-mid);}
-  .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
-  .footer-brand .nav-logo{font-size:1.2rem;margin-bottom:.75rem;display:block;}
-  .footer-brand p{font-size:.83rem;line-height:1.7;max-width:320px;}
-  .footer-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
-  .footer-col a{color:var(--text-muted);text-decoration:none;font-size:.88rem;}
-  .footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-faint);}
-  .footer-bottom a{color:var(--text-faint);text-decoration:none;}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
-  .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .hamburger.open span:nth-child(2){opacity:0;}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border-mid);z-index:99;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;}
-  .mobile-menu.open{display:flex;}
-  .mobile-menu a{color:var(--text-muted);text-decoration:none;font-size:1rem;font-weight:500;padding:.75rem 0;border-bottom:1px solid var(--border);}
-  .mobile-menu a.mob-cta{border-bottom:none;margin-top:.5rem;background:var(--accent);color:var(--navy)!important;font-weight:700;text-align:center;padding:.85rem;border-radius:4px;}
-  @media(max-width:768px){
-    .hero-grid,.problem-grid,.steps-grid,.benefits-grid,.compare-table,.ms-grid,.onboarding-intro,.beleg-grid{grid-template-columns:1fr;}
-    .steps-grid::before{display:none;}
-    .footer-inner{grid-template-columns:1fr;gap:2rem;}
-    nav{padding:0 1rem;}
-    .nav-links{display:none;}
-    .hamburger{display:flex;}
-    .hero{padding:90px 1.25rem 80px;}
-    .hero::before{display:none;}
-    section{padding:56px 1.25rem;}
-    .motto-banner{padding:2rem 1.25rem;}
-    .logos-band{padding:1rem 1.25rem;}
-    .logos-inner{gap:1rem;}
-    .stat-row{grid-template-columns:1fr 1fr;}
-    .ms-logos{grid-template-columns:repeat(2,1fr);}
-    .hero-buttons{flex-direction:column;}
-    .hero-buttons a{text-align:center;}
-    .section-sub{max-width:100%;}
-    .flow-decision-wrap{flex-direction:column;align-items:flex-start;}
-    .footer-bottom{flex-direction:column;gap:.5rem;}
-    .prozess-flow-row{flex-direction:column!important;gap:1rem!important;}
-    .prozess-flow-row > div[style*="width:24px"]{display:none!important;}
-    .prozess-bottom-band{grid-template-columns:1fr!important;}
-    
-    
-    
-    
-    
-    
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:#0D1B2A; --navy-mid:#1A2E42; --navy-light:#243D55; --navy-card:#162535;
+  --accent:#E8A020; --accent-light:#F5C05A; --white:#FFFFFF;
+  --text-white:rgba(255,255,255,0.90); --text-muted:rgba(255,255,255,0.55);
+  --text-faint:rgba(255,255,255,0.30); --border:rgba(255,255,255,0.08);
+  --border-mid:rgba(255,255,255,0.14);
+  --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--navy);color:var(--text-white);line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border-mid);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.9rem;font-weight:500;}
+.nav-cta{background:var(--accent)!important;color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:4px;font-weight:700!important;}
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:var(--navy-mid);clip-path:polygon(8% 0,100% 0,100% 100%,0% 100%);}
+.hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.4);color:var(--accent-light);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .9rem;border-radius:3px;margin-bottom:1.5rem;}
+.hero-eyebrow::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-.03em;margin-bottom:1rem;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero-tagline{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
+.hero-sub{color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-bottom:2rem;max-width:480px;}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:var(--navy);padding:.85rem 1.8rem;border-radius:4px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-block;}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.35);padding:.85rem 1.8rem;border-radius:4px;font-weight:500;font-size:.95rem;text-decoration:none;}
+.hero-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
+.hero-card-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1.25rem;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;}
+.stat-box{background:var(--navy-light);border-radius:6px;padding:1rem;}
+.stat-box.accent{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem;}
+.stat-box.accent .stat-num{color:var(--accent);}
+.stat-label{font-size:.78rem;color:var(--text-muted);font-weight:500;}
+.process-steps{display:flex;flex-direction:column;gap:.6rem;}
+.process-step{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--text-muted);}
+.step-dot{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--navy);flex-shrink:0;}
+.logos-band{background:var(--navy-mid);padding:1.25rem 2rem;border-top:1px solid var(--border-mid);}
+.logos-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.logos-label{font-size:.75rem;color:var(--text-faint);font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+.logos-list{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
+.logo-pill{background:var(--border);border:1px solid var(--border-mid);border-radius:4px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;color:var(--text-muted);}
+section{padding:80px 2rem;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
+.section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem;}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:3rem;}
+.problem{background:var(--navy-mid);}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+.pain-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:rgba(217,48,37,.08);border-left:3px solid rgba(217,48,37,.6);border-radius:0 6px 6px 0;}
+.pain-num{width:28px;height:28px;background:rgba(217,48,37,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#F28B82;flex-shrink:0;margin-top:2px;}
+.pain-text{font-size:.9rem;color:var(--text-muted);line-height:1.55;}
+.pain-text strong{color:var(--white);display:block;font-weight:600;margin-bottom:.15rem;}
+.cost-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:2rem;}
+.cost-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:var(--white);}
+.cost-item{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border);}
+.cost-label{font-size:.85rem;color:var(--text-muted);}
+.cost-val{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--accent);}
+.cost-total{margin-top:1.25rem;padding-top:1.25rem;border-top:2px solid var(--accent);display:flex;justify-content:space-between;align-items:center;}
+.cost-total .cost-label{color:var(--white);font-weight:600;font-size:.9rem;}
+.cost-total .cost-val{font-size:1.5rem;}
+.belege{background:var(--navy);}
+.beleg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.beleg-card{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
+.beleg-num{width:36px;height:36px;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:1rem;}
+.beleg-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+.beleg-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
+.beleg-tag{display:inline-block;margin-top:.75rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:3px;}
+.how{background:var(--navy-mid);}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;}
+.steps-grid::before{content:'';position:absolute;top:28px;left:calc(12.5% + 28px);right:calc(12.5% + 28px);height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0,var(--accent) 8px,transparent 8px,transparent 16px);}
+.step-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
+.step-num{width:56px;height:56px;background:var(--navy-light);border:1px solid var(--border-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:1.25rem;position:relative;z-index:1;}
+.step-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+.step-card p{font-size:.83rem;color:var(--text-muted);line-height:1.6;}
+.motto-banner{background:var(--navy-card);border-top:3px solid var(--accent);border-bottom:3px solid var(--accent);padding:3rem 2rem;text-align:center;}
+.motto-banner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:-.02em;}
+.motto-banner h2 span{color:var(--accent);}
+.onboarding{background:var(--navy);}
+.onboarding-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.pilot-badge{display:flex;align-items:flex-start;gap:1rem;background:rgba(26,115,64,.12);border:1px solid rgba(168,213,181,.2);border-radius:8px;padding:1.25rem;margin-top:2rem;}
+.pilot-badge-bar{width:4px;background:#6FCF97;border-radius:2px;flex-shrink:0;align-self:stretch;}
+.pilot-badge-text h4{font-weight:600;font-size:.95rem;color:#6FCF97;margin-bottom:.3rem;}
+.pilot-badge-text p{font-size:.85rem;color:rgba(111,207,151,.7);line-height:1.6;}
+.process-flow{display:flex;flex-direction:column;}
+.flow-step{display:flex;align-items:flex-start;gap:1rem;position:relative;}
+.flow-step:not(:last-child)::after{content:'';position:absolute;left:18px;top:40px;width:2px;height:calc(100% - 8px);background:var(--border-mid);}
+.flow-num{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;position:relative;z-index:1;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--accent);}
+.flow-body{padding-bottom:1.5rem;flex:1;}
+.flow-title{font-weight:600;font-size:.92rem;color:var(--white);margin-bottom:.2rem;}
+.flow-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;}
+.flow-decision-wrap{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;}
+.flow-tag-yes{background:rgba(26,115,64,.2);color:#6FCF97;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(111,207,151,.25);}
+.flow-tag-no{background:rgba(217,48,37,.15);color:#F28B82;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(242,139,130,.25);}
+.flow-no-risk{font-size:.8rem;color:var(--text-faint);font-style:italic;}
+.benefits{background:var(--navy-mid);}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.benefit-card{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.75rem;}
+.benefit-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;}
+.benefit-card h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.6rem;}
+.benefit-card p{font-size:.83rem;color:var(--text-muted);line-height:1.65;}
+.compare{background:var(--navy);}
+.compare-table{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.compare-col{background:var(--navy-mid);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;}
+.compare-col h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1rem;border-radius:4px;margin-bottom:1rem;}
+.compare-col.before h3{background:rgba(217,48,37,.12);color:#F28B82;border:1px solid rgba(217,48,37,.2);}
+.compare-col.after h3{background:rgba(26,115,64,.12);color:#6FCF97;border:1px solid rgba(111,207,151,.2);}
+.compare-item{display:flex;align-items:flex-start;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border);font-size:.88rem;color:var(--text-muted);}
+.compare-item:last-child{border-bottom:none;}
+.ci-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;margin-top:2px;}
+.before .ci-dot{background:rgba(217,48,37,.2);color:#F28B82;}
+.after .ci-dot{background:rgba(26,115,64,.2);color:#6FCF97;}
+.microsoft{background:var(--navy-mid);}
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.ms-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.ms-logo-box{background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.25rem;text-align:center;font-size:.82rem;font-weight:600;color:var(--text-muted);}
+.ms-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--navy);padding:.6rem 1.2rem;border-radius:4px;font-size:.82rem;font-weight:700;margin-top:1.5rem;}
+.cta-section{background:var(--accent);padding:80px 2rem;}
+.cta-inner{max-width:700px;margin:0 auto;text-align:center;}
+.cta-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:1rem;}
+.cta-section p{color:var(--navy);opacity:.75;font-size:1rem;margin-bottom:2rem;line-height:1.7;}
+.btn-dark{background:var(--navy);color:var(--white);padding:1rem 2rem;border-radius:4px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;}
+footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted);border-top:1px solid var(--border-mid);}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.footer-brand .nav-logo{font-size:1.2rem;margin-bottom:.75rem;display:block;}
+.footer-brand p{font-size:.83rem;line-height:1.7;max-width:320px;}
+.footer-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.footer-col a{color:var(--text-muted);text-decoration:none;font-size:.88rem;}
+.footer-bottom{max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-faint);}
+.footer-bottom a{color:var(--text-faint);text-decoration:none;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:1px solid var(--border-mid);z-index:99;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:var(--text-muted);text-decoration:none;font-size:1rem;font-weight:500;padding:.75rem 0;border-bottom:1px solid var(--border);}
+.mobile-menu a.mob-cta{border-bottom:none;margin-top:.5rem;background:var(--accent);color:var(--navy)!important;font-weight:700;text-align:center;padding:.85rem;border-radius:4px;}
+@media(max-width:768px){
+  .hero-grid,.problem-grid,.steps-grid,.benefits-grid,.compare-table,.ms-grid,.onboarding-intro,.beleg-grid{grid-template-columns:1fr;}
+  .steps-grid::before{display:none;}
+  .footer-inner{grid-template-columns:1fr;gap:2rem;}
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero{padding:90px 1.25rem 80px;}
+  .hero::before{display:none;}
+  section{padding:56px 1.25rem;}
+  .motto-banner{padding:2rem 1.25rem;}
+  .logos-band{padding:1rem 1.25rem;}
+  .logos-inner{gap:1rem;}
+  .stat-row{grid-template-columns:1fr 1fr;}
+  .ms-logos{grid-template-columns:repeat(2,1fr);}
+  .hero-buttons{flex-direction:column;}
+  .hero-buttons a{text-align:center;}
+  .section-sub{max-width:100%;}
+  .flow-decision-wrap{flex-direction:column;align-items:flex-start;}
+  .footer-bottom{flex-direction:column;gap:.5rem;}
+  .prozess-flow-row{flex-direction:column!important;gap:1rem!important;}
+  .prozess-flow-row > div[style*="width:24px"]{display:none!important;}
+  .prozess-bottom-band{grid-template-columns:1fr!important;}
+}
 </style>
 </head>
 <body>
@@ -351,136 +336,133 @@
     </div>
   </div>
 </section>
+<section style="background:#1A2E42;font-family:'DM Sans',sans-serif;padding:80px 32px;color:rgba(255,255,255,0.9);">
+  <div style="max-width:1120px;margin:0 auto;">
 
-<!-- PROZESSABLAUF SECTION -->
-<section style="background:var(--navy-mid);padding:80px 2rem;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div class="section-label">Prozessablauf</div>
-    <h2 class="section-title">Von der Rechnung zur Zahlung — vollautomatisch</h2>
-    <p class="section-sub">Fünf Schritte, weitestgehend automatisiert. Nahtlose Integration via REST API in Ihre bestehenden Systeme.</p>
+    <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#E8A020;margin-bottom:0.75rem;">Prozessablauf</div>
+    <h2 style="font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem;">Von der Rechnung zur Zahlung — vollautomatisch</h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.55);max-width:580px;line-height:1.75;margin-bottom:2.5rem;">Fünf Schritte, weitestgehend automatisiert. Vom Belegeingang über KI‑Erkennung und Freigabe bis zur revisionssicheren Ablage und Übergabe ans ERP — nahtlos integriert in Ihre bestehenden Systeme.</p>
 
-    <div style="background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1.5rem;overflow-x:auto;">
-      <svg width="100%" viewBox="0 0 680 780" role="img" style="min-width:480px;">
-        <title>BelegPilot Prozess-Workflow</title>
-        <desc>Workflow von Belegeingang über KI-Erkennung, Freigabe-Entscheidung bis zur Archivierung und ERP-Übergabe</desc>
+    <div style="background:#162535;border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:28px 24px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+      <svg width="100%" viewBox="0 0 900 1090" role="img" style="min-width:520px;font-family:'DM Sans',sans-serif;">
+        <title>BelegPilot Prozess-Flussdiagramm</title>
+        <desc>Flussdiagramm von Belegeingang über KI-Erkennung und Validierung, Freigabe-Entscheidung bis zur Archivierung und ERP-Übergabe</desc>
         <defs>
-          <marker id="wfarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
+          <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4D8FD6"></path></marker>
+          <marker id="aGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#BA7517"></path></marker>
+          <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2F9E6F"></path></marker>
+          <marker id="aRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C0413F"></path></marker>
+          <marker id="aGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="rgba(255,255,255,0.3)"></path></marker>
         </defs>
 
-        <!-- Eingang -->
-        <rect x="50" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
-        <text x="125" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">E-Mail</text>
+        <!-- Swimlane bands -->
+        <rect x="0" y="20" width="900" height="150" rx="8" fill="rgba(91,163,232,0.05)"></rect>
+        <rect x="0" y="178" width="900" height="382" rx="8" fill="rgba(232,160,32,0.05)"></rect>
+        <rect x="0" y="568" width="900" height="252" rx="8" fill="rgba(111,207,151,0.05)"></rect>
+        <rect x="0" y="828" width="900" height="242" rx="8" fill="rgba(255,255,255,0.03)"></rect>
+        <text x="22" y="95" text-anchor="middle" transform="rotate(-90,22,95)" style="font-size:11px;font-weight:700;letter-spacing:0.12em;fill:#8EC4F5;">EINGANG</text>
+        <text x="22" y="369" text-anchor="middle" transform="rotate(-90,22,369)" style="font-size:11px;font-weight:700;letter-spacing:0.12em;fill:#F5C05A;">KI · AUTOMATISCH</text>
+        <text x="22" y="694" text-anchor="middle" transform="rotate(-90,22,694)" style="font-size:11px;font-weight:700;letter-spacing:0.12em;fill:#9FE1CB;">FREIGABE · MENSCH</text>
+        <text x="22" y="949" text-anchor="middle" transform="rotate(-90,22,949)" style="font-size:11px;font-weight:700;letter-spacing:0.12em;fill:rgba(255,255,255,0.6);">AUSGABE</text>
 
-        <rect x="265" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
-        <text x="340" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">Scan / Upload</text>
+        <!-- EINGANG: three input boxes -->
+        <rect x="80" y="56" width="210" height="50" rx="8" fill="#0D2A45" stroke="#2E6CAE" stroke-width="1"></rect>
+        <text x="185" y="81" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:600;fill:#8EC4F5;">E-Mail</text>
+        <rect x="345" y="56" width="210" height="50" rx="8" fill="#0D2A45" stroke="#2E6CAE" stroke-width="1"></rect>
+        <text x="450" y="81" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:600;fill:#8EC4F5;">Scan / Upload</text>
+        <rect x="610" y="56" width="210" height="50" rx="8" fill="#0D2A45" stroke="#2E6CAE" stroke-width="1"></rect>
+        <text x="715" y="81" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:600;fill:#8EC4F5;">API-Import</text>
 
-        <rect x="480" y="30" width="150" height="44" rx="6" fill="#0D2A45" stroke="#185FA5" stroke-width="0.5"/>
-        <text x="555" y="52" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#90C8F8;">API-Import</text>
+        <!-- funnel arrows -->
+        <path d="M185,106 C185,150 370,150 405,196" fill="none" stroke="#4D8FD6" stroke-width="1.4" marker-end="url(#aBlue)"></path>
+        <line x1="450" y1="106" x2="450" y2="196" stroke="#4D8FD6" stroke-width="1.4" marker-end="url(#aBlue)"></line>
+        <path d="M715,106 C715,150 530,150 495,196" fill="none" stroke="#4D8FD6" stroke-width="1.4" marker-end="url(#aBlue)"></path>
 
-        <line x1="125" y1="74" x2="295" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <line x1="340" y1="74" x2="340" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <line x1="555" y1="74" x2="385" y2="128" stroke="#378ADD" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <!-- KI: Datenerfassung -->
+        <rect x="290" y="200" width="320" height="66" rx="10" fill="#3A2800" stroke="#A6650F" stroke-width="1"></rect>
+        <text x="450" y="223" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:700;fill:#FAC775;">KI · Datenerfassung</text>
+        <text x="450" y="245" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#EF9F27;">Azure AI · OCR · Feldextraktion</text>
+        <line x1="450" y1="266" x2="450" y2="316" stroke="#BA7517" stroke-width="1.4" marker-end="url(#aGold)"></line>
 
-        <!-- KI Datenerfassung -->
-        <rect x="190" y="128" width="300" height="56" rx="8" fill="#3A2800" stroke="#854F0B" stroke-width="0.5"/>
-        <text x="340" y="149" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#FAC775;">KI Datenerfassung</text>
-        <text x="340" y="168" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Azure AI · OCR · Feldextraktion</text>
+        <!-- KI: Validierung -->
+        <rect x="290" y="320" width="320" height="66" rx="10" fill="#3A2800" stroke="#A6650F" stroke-width="1"></rect>
+        <text x="450" y="343" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:700;fill:#FAC775;">KI · Rechnungsvalidierung</text>
+        <text x="450" y="365" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#EF9F27;">Duplikatprüfung · 3-Wege-Abgleich</text>
+        <line x1="450" y1="386" x2="450" y2="430" stroke="#BA7517" stroke-width="1.4" marker-end="url(#aGold)"></line>
 
-        <line x1="340" y1="184" x2="340" y2="224" stroke="#BA7517" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <!-- Decision: Daten korrekt? -->
+        <polygon points="450,432 542,492 450,552 358,492" fill="#1A2E42" stroke="#BA7517" stroke-width="1.2"></polygon>
+        <text x="450" y="485" text-anchor="middle" dominant-baseline="central" style="font-size:12.5px;font-weight:600;fill:#FAC775;">Daten</text>
+        <text x="450" y="501" text-anchor="middle" dominant-baseline="central" style="font-size:12.5px;font-weight:600;fill:#FAC775;">korrekt?</text>
 
-        <!-- KI Validierung -->
-        <rect x="190" y="224" width="300" height="56" rx="8" fill="#3A2800" stroke="#854F0B" stroke-width="0.5"/>
-        <text x="340" y="245" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#FAC775;">KI Rechnungsvalidierung</text>
-        <text x="340" y="264" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Duplikatprüfung · 3-Wege-Abgleich</text>
+        <!-- Nein: Rückfrage loop -->
+        <line x1="358" y1="492" x2="248" y2="492" stroke="#C0413F" stroke-width="1.4" marker-end="url(#aRed)"></line>
+        <text x="305" y="482" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#F28B82;">Nein</text>
+        <rect x="78" y="464" width="160" height="56" rx="8" fill="#3A1414" stroke="#A33A38" stroke-width="1"></rect>
+        <text x="158" y="485" text-anchor="middle" dominant-baseline="central" style="font-size:13px;font-weight:600;fill:#F09595;">Rückfrage</text>
+        <text x="158" y="503" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#F09595;">&amp; Korrektur</text>
+        <path d="M158,464 L158,353 L290,353" fill="none" stroke="#C0413F" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#aRed)"></path>
 
-        <line x1="340" y1="280" x2="340" y2="322" stroke="#BA7517" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <!-- Ja: down -->
+        <line x1="450" y1="552" x2="450" y2="606" stroke="#2F9E6F" stroke-width="1.4" marker-end="url(#aGreen)"></line>
+        <text x="466" y="582" style="font-size:12px;font-weight:600;fill:#6FCF97;">Ja</text>
 
-        <!-- Entscheidung: Daten korrekt? -->
-        <polygon points="340,322 420,348 340,374 260,348" fill="#1A2E42" stroke="#BA7517" stroke-width="0.8"/>
-        <text x="340" y="344" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">Daten</text>
-        <text x="340" y="358" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#EF9F27;">korrekt?</text>
+        <!-- FREIGABE: Workflow -->
+        <rect x="290" y="610" width="320" height="66" rx="10" fill="#04342C" stroke="#11805F" stroke-width="1"></rect>
+        <text x="450" y="633" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:700;fill:#9FE1CB;">Freigabe-Workflow</text>
+        <text x="450" y="655" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#5DCAA5;">Teams · Outlook · PowerApp — ein Klick, auch mobil</text>
+        <line x1="450" y1="676" x2="450" y2="700" stroke="#2F9E6F" stroke-width="1.4" marker-end="url(#aGreen)"></line>
 
-        <line x1="260" y1="348" x2="140" y2="348" stroke="#E24B4A" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <text x="200" y="340" text-anchor="middle" style="font-family:var(--sans);font-size:11px;fill:#F28B82;">Nein</text>
-        <rect x="50" y="322" width="90" height="52" rx="6" fill="#501313" stroke="#A32D2D" stroke-width="0.5"/>
-        <text x="95" y="341" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">Rückfrage</text>
-        <text x="95" y="357" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">/ Korrektur</text>
-        <path d="M50 348 L30 348 L30 252 L190 252" fill="none" stroke="#E24B4A" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#wfarrow)"/>
+        <!-- Decision: Freigabe erteilt? -->
+        <polygon points="450,702 542,752 450,802 358,752" fill="#1A2E42" stroke="#11805F" stroke-width="1.2"></polygon>
+        <text x="450" y="745" text-anchor="middle" dominant-baseline="central" style="font-size:12.5px;font-weight:600;fill:#9FE1CB;">Freigabe</text>
+        <text x="450" y="761" text-anchor="middle" dominant-baseline="central" style="font-size:12.5px;font-weight:600;fill:#9FE1CB;">erteilt?</text>
 
-        <line x1="340" y1="374" x2="340" y2="414" stroke="#639922" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <text x="356" y="396" style="font-family:var(--sans);font-size:11px;fill:#6FCF97;">Ja</text>
+        <!-- Nein: Abgelehnt -->
+        <line x1="542" y1="752" x2="660" y2="752" stroke="#C0413F" stroke-width="1.4" marker-end="url(#aRed)"></line>
+        <text x="601" y="742" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#F28B82;">Nein</text>
+        <rect x="662" y="724" width="160" height="56" rx="8" fill="#3A1414" stroke="#A33A38" stroke-width="1"></rect>
+        <text x="742" y="745" text-anchor="middle" dominant-baseline="central" style="font-size:13px;font-weight:600;fill:#F09595;">Abgelehnt</text>
+        <text x="742" y="763" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#F09595;">dokumentiert &amp; abgelegt</text>
+        <path d="M742,780 L742,891 L610,891" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#aGray)"></path>
 
-        <!-- Freigabe Workflow -->
-        <rect x="190" y="414" width="300" height="56" rx="8" fill="#04342C" stroke="#0F6E56" stroke-width="0.5"/>
-        <text x="340" y="435" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#9FE1CB;">Freigabe-Workflow</text>
-        <text x="340" y="454" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">Teams · Outlook · PowerApp</text>
+        <!-- Ja: down -->
+        <line x1="450" y1="802" x2="450" y2="856" stroke="#2F9E6F" stroke-width="1.4" marker-end="url(#aGreen)"></line>
+        <text x="466" y="832" style="font-size:12px;font-weight:600;fill:#6FCF97;">Ja</text>
 
-        <line x1="340" y1="470" x2="340" y2="510" stroke="#1D9E75" stroke-width="1" marker-end="url(#wfarrow)"/>
+        <!-- AUSGABE: Archivierung -->
+        <rect x="290" y="860" width="320" height="66" rx="10" fill="#173404" stroke="#4A8615" stroke-width="1"></rect>
+        <text x="450" y="883" text-anchor="middle" dominant-baseline="central" style="font-size:14px;font-weight:700;fill:#C0DD97;">Archivierung · SharePoint</text>
+        <text x="450" y="905" text-anchor="middle" dominant-baseline="central" style="font-size:11.5px;fill:#97C459;">GoBD-konform · DSGVO · Audit-Trail</text>
 
-        <!-- Entscheidung: Freigabe? -->
-        <polygon points="340,510 420,536 340,562 260,536" fill="#1A2E42" stroke="#1D9E75" stroke-width="0.8"/>
-        <text x="340" y="532" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">Freigabe</text>
-        <text x="340" y="546" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#5DCAA5;">erteilt?</text>
+        <!-- arrows to outputs -->
+        <path d="M370,926 C370,965 220,965 185,990" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" marker-end="url(#aGray)"></path>
+        <line x1="450" y1="926" x2="450" y2="990" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" marker-end="url(#aGray)"></line>
+        <path d="M530,926 C530,965 680,965 715,990" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.4" marker-end="url(#aGray)"></path>
 
-        <line x1="420" y1="536" x2="540" y2="536" stroke="#E24B4A" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <text x="480" y="528" text-anchor="middle" style="font-family:var(--sans);font-size:11px;fill:#F28B82;">Nein</text>
-        <rect x="540" y="510" width="100" height="52" rx="6" fill="#501313" stroke="#A32D2D" stroke-width="0.5"/>
-        <text x="590" y="529" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">Abgelehnt</text>
-        <text x="590" y="545" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#F09595;">→ Ablage</text>
-
-        <line x1="340" y1="562" x2="340" y2="602" stroke="#639922" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <text x="356" y="584" style="font-family:var(--sans);font-size:11px;fill:#6FCF97;">Ja</text>
-
-        <!-- Archivierung -->
-        <rect x="190" y="602" width="300" height="56" rx="8" fill="#173404" stroke="#3B6D11" stroke-width="0.5"/>
-        <text x="340" y="623" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:#C0DD97;">Archivierung SharePoint</text>
-        <text x="340" y="642" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:11px;fill:#97C459;">GoBD-konform · DSGVO · Audit-Trail</text>
-
-        <line x1="340" y1="658" x2="340" y2="698" stroke="#3B6D11" stroke-width="1" marker-end="url(#wfarrow)"/>
-
-        <!-- Ausgabe -->
-        <rect x="100" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
-        <text x="170" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">DATEV / ERP</text>
-
-        <rect x="270" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
-        <text x="340" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">NEVARIS / BRZ</text>
-
-        <rect x="440" y="698" width="140" height="44" rx="6" fill="#243D55" stroke="rgba(255,255,255,0.14)" stroke-width="0.5"/>
-        <text x="510" y="720" text-anchor="middle" dominant-baseline="central" style="font-family:var(--sans);font-size:13px;font-weight:600;fill:rgba(255,255,255,0.85);">SAP / Dynamics</text>
-
-        <line x1="290" y1="658" x2="170" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <line x1="340" y1="658" x2="340" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
-        <line x1="390" y1="658" x2="510" y2="698" stroke="rgba(255,255,255,0.25)" stroke-width="1" marker-end="url(#wfarrow)"/>
-
-        <!-- Swimlane labels -->
-        <text x="14" y="52" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,52)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Eingang</text>
-        <text x="14" y="212" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,212)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">KI</text>
-        <text x="14" y="490" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,490)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Mensch</text>
-        <text x="14" y="658" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,14,658)" style="font-family:var(--sans);font-size:10px;fill:rgba(255,255,255,0.3);">Ausgabe</text>
-
-        <!-- Divider lines -->
-        <line x1="25" y1="110" x2="655" y2="110" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
-        <line x1="25" y1="400" x2="655" y2="400" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
-        <line x1="25" y1="590" x2="655" y2="590" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
-        <line x1="25" y1="685" x2="655" y2="685" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" stroke-dasharray="4 4"/>
+        <rect x="80" y="994" width="210" height="50" rx="8" fill="#243D55" stroke="rgba(255,255,255,0.18)" stroke-width="1"></rect>
+        <text x="185" y="1019" text-anchor="middle" dominant-baseline="central" style="font-size:13.5px;font-weight:600;fill:rgba(255,255,255,0.85);">DATEV / Lexoffice</text>
+        <rect x="345" y="994" width="210" height="50" rx="8" fill="#243D55" stroke="rgba(255,255,255,0.18)" stroke-width="1"></rect>
+        <text x="450" y="1019" text-anchor="middle" dominant-baseline="central" style="font-size:13.5px;font-weight:600;fill:rgba(255,255,255,0.85);">NEVARIS / BRZ</text>
+        <rect x="610" y="994" width="210" height="50" rx="8" fill="#243D55" stroke="rgba(255,255,255,0.18)" stroke-width="1"></rect>
+        <text x="715" y="1019" text-anchor="middle" dominant-baseline="central" style="font-size:13.5px;font-weight:600;fill:rgba(255,255,255,0.85);">SAP / Dynamics</text>
       </svg>
     </div>
 
     <!-- Integration pills -->
-    <div style="margin-top:1.25rem;background:var(--navy-card);border:1px solid var(--border-mid);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-      <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);white-space:nowrap;">REST API Integration</div>
-      <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">NEVARIS</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">BRZ</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">DATEV</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:var(--accent-light);">Microsoft Dynamics</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">SAP</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">DocuWare</span>
-        <span style="padding:.3rem .75rem;border-radius:4px;font-size:.75rem;font-weight:600;background:var(--navy-light);border:1px solid var(--border-mid);color:var(--text-muted);">Lexoffice</span>
+    <div style="margin-top:1.25rem;background:#162535;border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E8A020;white-space:nowrap;">REST API Integration</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);color:#F5C05A;">NEVARIS</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);color:#F5C05A;">BRZ</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);color:#F5C05A;">DATEV</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);color:#F5C05A;">Microsoft Dynamics</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:#243D55;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.55);">SAP</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:#243D55;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.55);">DocuWare</span>
+        <span style="padding:0.3rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:600;background:#243D55;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.55);">Lexoffice</span>
       </div>
     </div>
+
   </div>
 </section>
 <div class="motto-banner">
@@ -580,7 +562,6 @@
     <div class="section-label">Kostenloses Erstgespräch</div>
     <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:1rem;">Bereit für den ersten Schritt?</h2>
     <p style="font-size:1rem;color:var(--text-muted);max-width:520px;margin:0 auto 2.5rem;line-height:1.75;">Kostenloses Pilotprojekt — unverbindlich und in wenigen Tagen live. 30 Minuten Gespräch, dann starten wir direkt mit Ihren echten Belegen.</p>
-
     <div style="background:var(--navy-card);border:1px solid var(--border-mid);border-radius:12px;padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
       <div style="display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:400px;text-align:left;">
         <div style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text-muted);">
@@ -589,14 +570,13 @@
         </div>
         <div style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text-muted);">
           <span style="width:28px;height:28px;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--accent);flex-shrink:0;">2</span>
-          Name & E-Mail eintragen — kein Konto erforderlich
+          Name &amp; E-Mail eintragen — kein Konto erforderlich
         </div>
         <div style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text-muted);">
           <span style="width:28px;height:28px;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--accent);flex-shrink:0;">3</span>
           Bestätigung per E-Mail mit Teams-Link
         </div>
       </div>
-
       <a href="https://bookings.cloud.microsoft/book/BelegPilot@Landau4Consulting.de/?ismsaljsauthenabled"
          target="_blank" rel="noopener noreferrer"
          style="display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--navy);padding:1rem 2.2rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;margin-top:.5rem;">
@@ -642,17 +622,175 @@
   </div>
 </footer>
 
+<!-- ================================================
+     BELEBOT – Chat-Widget
+     Roboter-Bild: assets/images/belegpilot-robot.png
+     ================================================ -->
+<style>
+  #bp-fab{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;z-index:9999;}
+  #bp-fab img{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 4px 14px rgba(0,0,0,0.22));transition:transform .2s ease;}
+  #bp-fab:hover img{transform:scale(1.08) rotate(-4deg);}
+  #bp-fab-badge{background:#1a2b5e;color:#f0a500;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;font-family:sans-serif;}
+  #bp-bubble{position:fixed;bottom:120px;right:20px;background:#1a2b5e;color:#fff;font-size:13px;line-height:1.45;padding:10px 14px;border-radius:12px 12px 0 12px;max-width:180px;font-family:sans-serif;z-index:9998;}
+  #bp-bubble::after{content:'';position:absolute;bottom:-8px;right:14px;border:8px solid transparent;border-top-color:#1a2b5e;border-bottom:0;}
+  #bp-window{position:fixed;bottom:20px;right:20px;width:320px;max-width:calc(100vw - 40px);background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,0.12);box-shadow:0 8px 32px rgba(0,0,0,0.14);display:none;z-index:9999;font-family:sans-serif;overflow:hidden;}
+  @media(max-width:400px){#bp-window{bottom:0;right:0;width:100vw;max-width:100vw;border-radius:16px 16px 0 0;}#bp-fab{bottom:16px;right:16px;}#bp-bubble{right:16px;}}
+  #bp-header{background:#1a2b5e;padding:13px 16px;display:flex;align-items:center;gap:10px;}
+  #bp-header img{width:34px;height:34px;object-fit:contain;}
+  .bp-hname{color:#f0a500;font-size:14px;font-weight:600;}
+  .bp-hsub{color:rgba(255,255,255,0.65);font-size:11px;}
+  #bp-close{margin-left:auto;color:rgba(255,255,255,0.6);font-size:20px;cursor:pointer;line-height:1;padding:2px 4px;}
+  #bp-msgs{padding:14px 14px 6px;display:flex;flex-direction:column;gap:9px;max-height:240px;overflow-y:auto;}
+  .bp-msg{font-size:13px;line-height:1.5;padding:8px 12px;border-radius:10px;max-width:88%;}
+  .bp-msg.bot{background:#f0f4f8;color:#1a2b5e;align-self:flex-start;border-bottom-left-radius:3px;}
+  .bp-msg.usr{background:#1a2b5e;color:#fff;align-self:flex-end;border-bottom-right-radius:3px;}
+  #bp-choices{padding:10px 14px 14px;display:flex;flex-direction:column;gap:7px;}
+  .bp-btn{background:transparent;border:1px solid #1a2b5e;color:#1a2b5e;font-size:12px;padding:8px 12px;border-radius:8px;cursor:pointer;text-align:left;transition:background .15s,color .15s;font-family:sans-serif;}
+  .bp-btn:hover{background:#1a2b5e;color:#fff;}
+  .bp-cta{background:#f0a500;border:none;color:#1a2b5e;font-size:13px;font-weight:600;padding:11px 16px;border-radius:8px;cursor:pointer;width:100%;font-family:sans-serif;transition:background .15s;}
+  .bp-cta:hover{background:#d49200;}
+</style>
+
+<div id="bp-fab" onclick="bpOpen()" aria-label="BeleBot öffnen">
+  <img src="assets/images/belegpilot-robot.png" alt="BeleBot" onerror="this.style.fontSize='48px';this.outerHTML='<span style=font-size:48px>🤖</span>'">
+  <span id="bp-fab-badge">Demo buchen</span>
+</div>
+
+<div id="bp-bubble">Hallo! Ich bin BeleBot 👷<br>Jetzt kostenlose Demo sichern!</div>
+
+<div id="bp-window" role="dialog" aria-label="BeleBot Chat">
+  <div id="bp-header">
+    <img src="assets/images/belegpilot-robot.png" alt="" onerror="this.style.display='none'">
+    <div>
+      <div class="bp-hname">BeleBot</div>
+      <div class="bp-hsub">BelegPilot.ai – Dein Assistent</div>
+    </div>
+    <span id="bp-close" onclick="bpClose()" aria-label="Schließen">✕</span>
+  </div>
+  <div id="bp-msgs"></div>
+  <div id="bp-choices"></div>
+</div>
+
 <script>
-  const btn = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', function() {
-    btn.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-  function closeMobileMenu() {
-    btn.classList.remove('open');
-    menu.classList.remove('open');
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('mobile-menu');
+btn.addEventListener('click', function() {
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+function closeMobileMenu() {
+  btn.classList.remove('open');
+  menu.classList.remove('open');
+}
+
+// BeleBot Widget
+(function() {
+  var BOOKINGS = 'https://bookings.cloud.microsoft/book/BelegPilot@Landau4Consulting.de/?ismsaljsauthenabled';
+  var answers = {};
+
+  function msg(text, type) {
+    var el = document.createElement('div');
+    el.className = 'bp-msg ' + type;
+    el.innerHTML = text;
+    document.getElementById('bp-msgs').appendChild(el);
+    document.getElementById('bp-msgs').scrollTop = 9999;
   }
+
+  function choices(btns) {
+    var c = document.getElementById('bp-choices');
+    c.innerHTML = '';
+    btns.forEach(function(b) {
+      var btn = document.createElement('button');
+      btn.className = b.cta ? 'bp-cta' : 'bp-btn';
+      btn.innerHTML = b.label;
+      btn.onclick = b.fn;
+      c.appendChild(btn);
+    });
+  }
+
+  function delay(fn) { setTimeout(fn, 600); }
+
+  function q1() {
+    msg('Hallo! Ich bin BelegPilot.ai — dein KI-Assistent für automatische Belegverarbeitung. Darf ich kurz fragen, wie ich helfen kann?', 'bot');
+    choices([
+      { label: 'Unter 100 Belege',      fn: function(){ pick1('Unter 100 Belege'); }},
+      { label: '100 – 500 Belege',       fn: function(){ pick1('100–500 Belege'); }},
+      { label: '500 – 2.000 Belege',     fn: function(){ pick1('500–2.000 Belege'); }},
+      { label: 'Über 2.000 Belege',      fn: function(){ pick1('Über 2.000 Belege'); }},
+    ]);
+  }
+
+  function pick1(v) {
+    answers.belege = v;
+    msg(v, 'usr');
+    choices([]);
+    delay(q2);
+  }
+
+  function q2() {
+    msg('Wie groß ist Ihr Unternehmen?', 'bot');
+    choices([
+      { label: '1 – 10 Mitarbeiter',   fn: function(){ pick2('1–10 Mitarbeiter'); }},
+      { label: '11 – 50 Mitarbeiter',  fn: function(){ pick2('11–50 Mitarbeiter'); }},
+      { label: '51 – 200 Mitarbeiter', fn: function(){ pick2('51–200 Mitarbeiter'); }},
+      { label: 'Über 200 Mitarbeiter', fn: function(){ pick2('200+ Mitarbeiter'); }},
+    ]);
+  }
+
+  function pick2(v) {
+    answers.groesse = v;
+    msg(v, 'usr');
+    choices([]);
+    delay(q3);
+  }
+
+  function q3() {
+    msg('In welcher Branche sind Sie tätig?', 'bot');
+    choices([
+      { label: 'Baubranche / Baunebengewerbe', fn: function(){ pick3('Baubranche'); }},
+      { label: 'Handwerk / Ausbau',            fn: function(){ pick3('Handwerk'); }},
+      { label: 'Gartenbau / Landschaftsbau',   fn: function(){ pick3('Gartenbau'); }},
+      { label: 'Andere Branche',               fn: function(){ pick3('Andere Branche'); }},
+    ]);
+  }
+
+  function pick3(v) {
+    answers.branche = v;
+    msg(v, 'usr');
+    choices([]);
+    delay(finish);
+  }
+
+  function finish() {
+    var intro = answers.belege === 'Unter 100 Belege'
+      ? 'Auch bei diesem Volumen lohnt BelegPilot — besonders wenn Sie wachsen wollen.'
+      : 'Mit <strong>' + answers.belege + '</strong> sparen Sie mit BelegPilot jede Menge Zeit und Kosten.';
+    msg(intro + '<br><br>Buchen Sie jetzt Ihre <strong>kostenlose 30-Min-Demo</strong> — live in Ihrem Microsoft 365. Wael Landau zeigt Ihnen persönlich, was möglich ist.', 'bot');
+    choices([{ label: '📅 Jetzt kostenlosen Demo-Termin buchen', cta: true, fn: function(){ window.open(BOOKINGS, '_blank'); }}]);
+  }
+
+  window.bpOpen = function() {
+    document.getElementById('bp-fab').style.display    = 'none';
+    document.getElementById('bp-bubble').style.display = 'none';
+    var win = document.getElementById('bp-window');
+    win.style.display = 'block';
+    if (!document.getElementById('bp-msgs').hasChildNodes()) {
+      delay(q1);
+    }
+  };
+
+  window.bpClose = function() {
+    document.getElementById('bp-window').style.display = 'none';
+    document.getElementById('bp-fab').style.display    = 'flex';
+    document.getElementById('bp-bubble').style.display = 'block';
+  };
+
+  // Sprechblase nach 5s ausblenden
+  setTimeout(function() {
+    var b = document.getElementById('bp-bubble');
+    if (b) b.style.display = 'none';
+  }, 5000);
+})();
 </script>
 </body>
 </html>
