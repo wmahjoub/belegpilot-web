@@ -99,10 +99,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);borde
 .process-step{display:flex;align-items:center;gap:.75rem;font-size:.85rem;color:var(--text-muted);}
 .step-dot{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--navy);flex-shrink:0;}
 .logos-band{background:var(--navy-mid);padding:1.25rem 2rem;border-top:1px solid var(--border-mid);}
-.logos-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
-.logos-label{font-size:.75rem;color:var(--text-faint);font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
-.logos-list{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
+.logos-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.logos-label{font-size:.75rem;color:var(--text-faint);font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+.logos-list{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
 .logo-pill{background:var(--border);border:1px solid var(--border-mid);border-radius:4px;padding:.35rem .9rem;font-size:.8rem;font-weight:600;color:var(--text-muted);}
+.logo-img-wrap{background:rgba(255,255,255,0.06);border:1px solid var(--border-mid);border-radius:6px;padding:.4rem .8rem;display:flex;align-items:center;justify-content:center;height:44px;}
+.logo-img-wrap img{height:26px;width:auto;max-width:100px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.75;transition:opacity .2s;}
+.logo-img-wrap img:hover{opacity:1;}
+@media(max-width:600px){
+  .logos-band{padding:1.25rem;}
+  .logos-inner{flex-direction:column;align-items:flex-start;gap:.75rem;}
+  .logos-list{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;width:100%;}
+  .logo-img-wrap{height:40px;padding:.35rem .6rem;justify-content:center;}
+  .logo-img-wrap img{height:22px;max-width:80px;}
+}
 section{padding:80px 2rem;}
 .section-inner{max-width:1100px;margin:0 auto;}
 .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
@@ -281,9 +291,11 @@ footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted
   <div class="logos-inner">
     <span class="logos-label">Vertrauen von</span>
     <div class="logos-list">
-      <div class="logo-pill">STADA</div><div class="logo-pill">AERLO Logic</div>
-      <div class="logo-pill">CAPTRAIN</div><div class="logo-pill">MHP</div>
-      <div class="logo-pill">Microsoft Partner</div>
+      <div class="logo-img-wrap"><img src="assets/images/logos/Stada.png" alt="STADA"></div>
+      <div class="logo-img-wrap"><img src="assets/images/logos/aerologic.png" alt="AeroLogic"></div>
+      <div class="logo-img-wrap"><img src="assets/images/logos/captrain.png" alt="Captrain"></div>
+      <div class="logo-img-wrap"><img src="assets/images/logos/aerzener-gala-bau.png" alt="Aerzener Gala Bau"></div>
+      <div class="logo-img-wrap"><img src="assets/images/logos/Microsft.png" alt="Microsoft Certified Partner"></div>
     </div>
   </div>
 </div>
@@ -783,6 +795,7 @@ footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted
   }
   .bp-msg{font-size:14px;line-height:1.55;padding:10px 14px;border-radius:14px;max-width:90%;}
   .bp-msg.bot{background:#f4f6f9;color:#1a2b5e;align-self:flex-start;border-bottom-left-radius:4px;}
+  .bp-msg.bot-hint{background:#fff8e8;border:1.5px solid #f0c060;color:#5a3a00;align-self:flex-start;border-bottom-left-radius:4px;max-width:95%!important;}
   .bp-msg.usr{background:#1a2b5e;color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
   /* ── Buttons ── */
   #bp-choices{padding:10px 14px 16px;display:flex;flex-direction:column;gap:8px;background:#ffffff;}
@@ -890,7 +903,7 @@ function closeMobileMenu() {
     choices([]);
     if (v === 'Unter 100 Belege') {
       delay(function(){
-        msg('BelegPilot.ai wurde speziell für Bauunternehmen mit einem höheren Belegaufkommen entwickelt. Bei weniger als 100 Eingangsbelegen pro Monat ist der Nutzen einer automatisierten KI-Lösung in der Regel geringer.', 'bot');
+        msg('<strong style="display:block;margin-bottom:6px;color:#7a5000;">Hinweis zum Belegvolumen</strong>BelegPilot.ai ist für Unternehmen ab 100 Eingangsbelegen pro Monat ausgelegt. Für Ihr aktuelles Volumen ist der Einsatz leider nicht wirtschaftlich.', 'bot-hint');
       });
     } else {
       delay(q2);
