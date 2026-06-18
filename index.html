@@ -773,8 +773,8 @@ function closeMobileMenu() {
     var intro = answers.belege === 'Unter 100 Belege'
       ? 'Auch bei diesem Volumen lohnt BelegPilot — besonders wenn Sie wachsen wollen.'
       : 'Mit <strong>' + answers.belege + '</strong> sparen Sie mit BelegPilot jede Menge Zeit und Kosten.';
-    msg(intro + '<br><br>Buchen Sie jetzt Ihre <strong>kostenlose 30-Min-Demo</strong> — live in Ihrem Microsoft 365. Wael Landau zeigt Ihnen persönlich, was möglich ist.', 'bot');
-    choices([{ label: '📅 Jetzt kostenlosen Demo-Termin buchen', cta: true, fn: function(){ window.open(BOOKINGS, '_blank'); }}]);
+    msg(intro + '<br><br>Buchen Sie jetzt Ihre <strong>kostenlose 30-Min-Demo</strong> — Wael Landau zeigt Ihnen persönlich, was möglich ist.', 'bot');
+    choices([{ label: 'Jetzt kostenlosen Demo-Termin buchen', cta: true, fn: function(){ window.open(BOOKINGS, '_blank'); }}]);
   }
 
   window.bpOpen = function() {
