@@ -628,8 +628,16 @@ footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted
      ================================================ -->
 <style>
   #bp-fab{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;z-index:9999;}
-  #bp-fab img{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 4px 14px rgba(0,0,0,0.22));transition:transform .2s ease;}
-  #bp-fab:hover img{transform:scale(1.08) rotate(-4deg);}
+  #bp-fab img{width:68px;height:68px;object-fit:contain;filter:drop-shadow(0 4px 14px rgba(0,0,0,0.22));animation:bp-wobble 2.5s ease-in-out infinite;}
+  #bp-fab:hover img{animation:none;transform:scale(1.1) rotate(-5deg);}
+  @keyframes bp-wobble{
+    0%,100%{transform:rotate(0deg) scale(1);}
+    15%{transform:rotate(-6deg) scale(1.05);}
+    30%{transform:rotate(5deg) scale(1.05);}
+    45%{transform:rotate(-4deg) scale(1.02);}
+    60%{transform:rotate(3deg) scale(1.02);}
+    75%{transform:rotate(-2deg) scale(1);}
+  }
   #bp-fab-badge{background:#1a2b5e;color:#f0a500;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap;font-family:sans-serif;}
   #bp-bubble{position:fixed;bottom:120px;right:20px;background:#1a2b5e;color:#fff;font-size:13px;line-height:1.45;padding:10px 14px;border-radius:12px 12px 0 12px;max-width:180px;font-family:sans-serif;z-index:9998;}
   #bp-bubble::after{content:'';position:absolute;bottom:-8px;right:14px;border:8px solid transparent;border-top-color:#1a2b5e;border-bottom:0;}
@@ -656,7 +664,7 @@ footer{background:var(--navy-card);padding:3rem 2rem 2rem;color:var(--text-muted
   <span id="bp-fab-badge">Demo buchen</span>
 </div>
 
-<div id="bp-bubble">Hallo! Ich bin BeleBot 👷<br>Jetzt kostenlose Demo sichern!</div>
+<div id="bp-bubble">Hey, ich bin der <span style="font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:16px;">Beleg<span style="color:#f0a500;">Pilot.ai</span></span>! Darf ich kurz 2 Fragen stellen?</div>
 
 <div id="bp-window" role="dialog" aria-label="BeleBot Chat">
   <div id="bp-header">
